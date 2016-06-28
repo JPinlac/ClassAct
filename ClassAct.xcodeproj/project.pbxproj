@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		27EFEE3BBE456190E0A58362 /* libPods-ClassAct.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D5D7333FA65AE41E5F4457FA /* libPods-ClassAct.a */; };
 		43C56D801D216B6200C56ECC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 43C56D7F1D216B6200C56ECC /* main.m */; };
 		43C56D831D216B6200C56ECC /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 43C56D821D216B6200C56ECC /* AppDelegate.m */; };
 		43C56D861D216B6200C56ECC /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43C56D851D216B6200C56ECC /* ViewController.m */; };
@@ -26,6 +27,9 @@
 		43C56D8A1D216B6200C56ECC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		43C56D8D1D216B6200C56ECC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		43C56D8F1D216B6200C56ECC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4D50ED509BC56FCEBB8F9928 /* Pods-ClassAct.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ClassAct.release.xcconfig"; path = "Pods/Target Support Files/Pods-ClassAct/Pods-ClassAct.release.xcconfig"; sourceTree = "<group>"; };
+		D5D7333FA65AE41E5F4457FA /* libPods-ClassAct.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ClassAct.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		EB2DAE71A68E18C2018415FD /* Pods-ClassAct.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ClassAct.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ClassAct/Pods-ClassAct.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,17 +37,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				27EFEE3BBE456190E0A58362 /* libPods-ClassAct.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		411451ACF6E8AA21B6B56282 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D5D7333FA65AE41E5F4457FA /* libPods-ClassAct.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		43C56D721D216B6200C56ECC = {
 			isa = PBXGroup;
 			children = (
 				43C56D7D1D216B6200C56ECC /* ClassAct */,
 				43C56D7C1D216B6200C56ECC /* Products */,
+				A98B8B3B5DB4583B06C24E36 /* Pods */,
+				411451ACF6E8AA21B6B56282 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -79,6 +94,15 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		A98B8B3B5DB4583B06C24E36 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				EB2DAE71A68E18C2018415FD /* Pods-ClassAct.debug.xcconfig */,
+				4D50ED509BC56FCEBB8F9928 /* Pods-ClassAct.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -86,9 +110,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 43C56D921D216B6200C56ECC /* Build configuration list for PBXNativeTarget "ClassAct" */;
 			buildPhases = (
+				7DCD69196DCECBF47BB0B9AF /* [CP] Check Pods Manifest.lock */,
 				43C56D771D216B6200C56ECC /* Sources */,
 				43C56D781D216B6200C56ECC /* Frameworks */,
 				43C56D791D216B6200C56ECC /* Resources */,
+				D75E0A64D588E5E7D841CEFC /* [CP] Embed Pods Frameworks */,
+				FD34A9C8D3B2270C3435AB61 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -143,6 +170,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		7DCD69196DCECBF47BB0B9AF /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		D75E0A64D588E5E7D841CEFC /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ClassAct/Pods-ClassAct-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FD34A9C8D3B2270C3435AB61 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ClassAct/Pods-ClassAct-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		43C56D771D216B6200C56ECC /* Sources */ = {
@@ -261,6 +336,7 @@
 		};
 		43C56D931D216B6200C56ECC /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = EB2DAE71A68E18C2018415FD /* Pods-ClassAct.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = ClassAct/Info.plist;
@@ -272,6 +348,7 @@
 		};
 		43C56D941D216B6200C56ECC /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4D50ED509BC56FCEBB8F9928 /* Pods-ClassAct.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = ClassAct/Info.plist;
@@ -300,6 +377,7 @@
 				43C56D941D216B6200C56ECC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

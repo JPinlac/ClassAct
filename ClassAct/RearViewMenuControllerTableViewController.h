@@ -10,4 +10,6 @@
 
 @interface RearViewMenuControllerTableViewController : UITableViewController
 
+@property(strong, nonatomic) NSArray *menuArray;
+
 @end

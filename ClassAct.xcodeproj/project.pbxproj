@@ -8,6 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		27EFEE3BBE456190E0A58362 /* libPods-ClassAct.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D5D7333FA65AE41E5F4457FA /* libPods-ClassAct.a */; };
+		43920DE31D22CCE300C6FE12 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43920DE21D22CCE300C6FE12 /* SWRevealViewController.m */; };
+		43920DE61D22CF1400C6FE12 /* RearViewMenuControllerTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43920DE51D22CF1400C6FE12 /* RearViewMenuControllerTableViewController.m */; };
+		43920DE91D22CFE500C6FE12 /* AgendaMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43920DE81D22CFE500C6FE12 /* AgendaMainViewController.m */; };
+		43920DEC1D22E83800C6FE12 /* menu.png in Resources */ = {isa = PBXBuildFile; fileRef = 43920DEA1D22E83800C6FE12 /* menu.png */; };
+		43920DED1D22E83800C6FE12 /* menu@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 43920DEB1D22E83800C6FE12 /* menu@2x.png */; };
+		43920DF01D22ECBE00C6FE12 /* LogInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43920DEF1D22ECBE00C6FE12 /* LogInViewController.m */; };
 		43C56D801D216B6200C56ECC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 43C56D7F1D216B6200C56ECC /* main.m */; };
 		43C56D831D216B6200C56ECC /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 43C56D821D216B6200C56ECC /* AppDelegate.m */; };
 		43C56D861D216B6200C56ECC /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43C56D851D216B6200C56ECC /* ViewController.m */; };
@@ -17,6 +23,16 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		43920DE11D22CCE300C6FE12 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SWRevealViewController.h; path = ../../SWRevealViewController/SWRevealViewController/SWRevealViewController.h; sourceTree = "<group>"; };
+		43920DE21D22CCE300C6FE12 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SWRevealViewController.m; path = ../../SWRevealViewController/SWRevealViewController/SWRevealViewController.m; sourceTree = "<group>"; };
+		43920DE41D22CF1400C6FE12 /* RearViewMenuControllerTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RearViewMenuControllerTableViewController.h; sourceTree = "<group>"; };
+		43920DE51D22CF1400C6FE12 /* RearViewMenuControllerTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RearViewMenuControllerTableViewController.m; sourceTree = "<group>"; };
+		43920DE71D22CFE500C6FE12 /* AgendaMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AgendaMainViewController.h; sourceTree = "<group>"; };
+		43920DE81D22CFE500C6FE12 /* AgendaMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AgendaMainViewController.m; sourceTree = "<group>"; };
+		43920DEA1D22E83800C6FE12 /* menu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = menu.png; path = ../../../../Downloads/SidebarDemoTemplate/SidebarDemo/menu.png; sourceTree = "<group>"; };
+		43920DEB1D22E83800C6FE12 /* menu@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "menu@2x.png"; path = "../../../../Downloads/SidebarDemoTemplate/SidebarDemo/menu@2x.png"; sourceTree = "<group>"; };
+		43920DEE1D22ECBE00C6FE12 /* LogInViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LogInViewController.h; sourceTree = "<group>"; };
+		43920DEF1D22ECBE00C6FE12 /* LogInViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LogInViewController.m; sourceTree = "<group>"; };
 		43C56D7B1D216B6200C56ECC /* ClassAct.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ClassAct.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		43C56D7F1D216B6200C56ECC /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		43C56D811D216B6200C56ECC /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -75,9 +91,19 @@
 			children = (
 				43C56D811D216B6200C56ECC /* AppDelegate.h */,
 				43C56D821D216B6200C56ECC /* AppDelegate.m */,
+				43920DE11D22CCE300C6FE12 /* SWRevealViewController.h */,
+				43920DE21D22CCE300C6FE12 /* SWRevealViewController.m */,
 				43C56D841D216B6200C56ECC /* ViewController.h */,
 				43C56D851D216B6200C56ECC /* ViewController.m */,
 				43C56D871D216B6200C56ECC /* Main.storyboard */,
+				43920DEE1D22ECBE00C6FE12 /* LogInViewController.h */,
+				43920DEF1D22ECBE00C6FE12 /* LogInViewController.m */,
+				43920DEA1D22E83800C6FE12 /* menu.png */,
+				43920DEB1D22E83800C6FE12 /* menu@2x.png */,
+				43920DE71D22CFE500C6FE12 /* AgendaMainViewController.h */,
+				43920DE81D22CFE500C6FE12 /* AgendaMainViewController.m */,
+				43920DE41D22CF1400C6FE12 /* RearViewMenuControllerTableViewController.h */,
+				43920DE51D22CF1400C6FE12 /* RearViewMenuControllerTableViewController.m */,
 				43C56D8A1D216B6200C56ECC /* Assets.xcassets */,
 				43C56D8C1D216B6200C56ECC /* LaunchScreen.storyboard */,
 				43C56D8F1D216B6200C56ECC /* Info.plist */,
@@ -110,12 +136,15 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 43C56D921D216B6200C56ECC /* Build configuration list for PBXNativeTarget "ClassAct" */;
 			buildPhases = (
+				C782E3BB52FE29E5CD48FD57 /* 📦 Check Pods Manifest.lock */,
 				7DCD69196DCECBF47BB0B9AF /* [CP] Check Pods Manifest.lock */,
 				43C56D771D216B6200C56ECC /* Sources */,
 				43C56D781D216B6200C56ECC /* Frameworks */,
 				43C56D791D216B6200C56ECC /* Resources */,
 				D75E0A64D588E5E7D841CEFC /* [CP] Embed Pods Frameworks */,
 				FD34A9C8D3B2270C3435AB61 /* [CP] Copy Pods Resources */,
+				9A53BF119FB04DCB45945E17 /* 📦 Embed Pods Frameworks */,
+				0374BB550564B0C4876A782C /* 📦 Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -164,7 +193,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				43920DEC1D22E83800C6FE12 /* menu.png in Resources */,
 				43C56D8E1D216B6200C56ECC /* LaunchScreen.storyboard in Resources */,
+				43920DED1D22E83800C6FE12 /* menu@2x.png in Resources */,
 				43C56D8B1D216B6200C56ECC /* Assets.xcassets in Resources */,
 				43C56D891D216B6200C56ECC /* Main.storyboard in Resources */,
 			);
@@ -173,6 +204,21 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		0374BB550564B0C4876A782C /* 📦 Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ClassAct/Pods-ClassAct-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		7DCD69196DCECBF47BB0B9AF /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -181,6 +227,36 @@
 			inputPaths = (
 			);
 			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		9A53BF119FB04DCB45945E17 /* 📦 Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ClassAct/Pods-ClassAct-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C782E3BB52FE29E5CD48FD57 /* 📦 Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -225,9 +301,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				43920DF01D22ECBE00C6FE12 /* LogInViewController.m in Sources */,
 				43C56D861D216B6200C56ECC /* ViewController.m in Sources */,
 				43C56D831D216B6200C56ECC /* AppDelegate.m in Sources */,
 				43C56D801D216B6200C56ECC /* main.m in Sources */,
+				43920DE91D22CFE500C6FE12 /* AgendaMainViewController.m in Sources */,
+				43920DE31D22CCE300C6FE12 /* SWRevealViewController.m in Sources */,
+				43920DE61D22CF1400C6FE12 /* RearViewMenuControllerTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

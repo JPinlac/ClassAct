@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "5F26E14DEA216FF335EAFAA76042CA142C240A55",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "01529694042D8C98B30DC19F4D4370A306884FE4" : 0,
+    "5F26E14DEA216FF335EAFAA76042CA142C240A55" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "35C2977F-4D91-41E3-8481-4FAC56EAEF91",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "01529694042D8C98B30DC19F4D4370A306884FE4" : "SWRevealViewController\/",
+    "5F26E14DEA216FF335EAFAA76042CA142C240A55" : "ClassAct\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "ClassAct",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "ClassAct.xcworkspace",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/John-Lluch\/SWRevealViewController.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "01529694042D8C98B30DC19F4D4370A306884FE4"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "github.com:JPinlac\/ClassAct.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "5F26E14DEA216FF335EAFAA76042CA142C240A55"
+    }
+  ]
+}

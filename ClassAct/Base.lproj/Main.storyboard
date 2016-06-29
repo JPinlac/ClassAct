@@ -24,6 +24,10 @@
                                     <segue destination="BYZ-38-t0r" kind="modal" id="p7S-p8-TRF"/>
                                 </connections>
                             </button>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4kQ-J8-h9J" customClass="GIDSignInButton">
+                                <rect key="frame" x="40" y="268" width="240" height="45"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>

@@ -23,11 +23,8 @@ xcuserdata/
 *.xcuserstate
 
 ## Sensitive App data
-GMaps.plist
-GoogleService-Info.plist
+*.plist
 
-## Obj-C/Swift specific
-*.hmap
 *.ipa
 *.dSYM.zip
 *.dSYM

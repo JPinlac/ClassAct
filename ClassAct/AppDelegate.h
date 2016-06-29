@@ -10,7 +10,7 @@
 @import Firebase;
 #import <GoogleSignIn/GoogleSignIn.h>
 
-@interface AppDelegate : UIResponder <UIApplicationDelegate>
+@interface AppDelegate : UIResponder <UIApplicationDelegate, GIDSignInDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
 

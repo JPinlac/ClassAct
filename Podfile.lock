@@ -11,11 +11,15 @@ PODS:
     - FBSDKCoreKit
   - FBSDKShareKit (4.12.0):
     - FBSDKCoreKit
+  - Firebase (3.2.1):
+    - Firebase/Core (= 3.2.1)
   - Firebase/Analytics (3.2.1):
     - FirebaseAnalytics (= 3.2.0)
   - Firebase/Auth (3.2.1):
     - Firebase/Analytics (= 3.2.1)
     - FirebaseAuth (= 3.0.2)
+  - Firebase/Core (3.2.1):
+    - Firebase/Analytics (= 3.2.1)
   - FirebaseAnalytics (3.2.0):
     - FirebaseInstanceID (~> 1.0)
     - GoogleInterchangeUtilities (~> 1.2)
@@ -48,6 +52,7 @@ DEPENDENCIES:
   - FBSDKCoreKit
   - FBSDKLoginKit
   - FBSDKShareKit
+  - Firebase
   - Firebase/Auth
   - GoogleSignIn
 
@@ -68,6 +73,6 @@ SPEC CHECKSUMS:
   GoogleSymbolUtilities: 33117db1b5f290c6fbf259585e4885b4c84b98d7
   GoogleUtilities: 56c5ac05b7aa5dc417a1bb85221a9516e04d7032
 
-PODFILE CHECKSUM: 8a06de1525aaa67b81a6eeb3e2f74582b2d49b06
+PODFILE CHECKSUM: f8d17355cef23bb3cec85fa926e4f5109c51a49c
 
 COCOAPODS: 1.0.0

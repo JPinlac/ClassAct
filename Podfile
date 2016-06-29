@@ -11,5 +11,6 @@ target 'ClassAct' do
   pod 'FBSDKShareKit'
   pod 'Firebase/Auth'
   pod 'GoogleSignIn'
+  pod 'Firebase'
 end
 

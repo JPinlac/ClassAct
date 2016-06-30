@@ -14,4 +14,6 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *quoteLabel;
 
+//@property (weak, nonatomic) IBOutlet UIButton *fileStorageButton;
+
 @end

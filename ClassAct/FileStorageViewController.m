@@ -18,9 +18,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-//    FIRStorage *storage = [FIRStorage storage];
     // Do any additional setup after loading the view.
-//    FIRStorageReference *storageRef = [storage referenceForURL:@"gs://classact-22396.appspot.com"];
+    FIRStorage *storage = [FIRStorage storage];
+    FIRStorageReference *storageRef = [storage referenceForURL:@"gs://classact-22396.appspot.com"];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -32,6 +32,7 @@
     NSLog(@"********************************************************");
     NSLog(@"========================================================");
     NSLog(@"upload button pushed");
+    
 }
 
 - (IBAction)DownloadButton:(id)sender {

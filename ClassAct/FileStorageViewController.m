@@ -7,6 +7,8 @@
 //
 
 #import "FileStorageViewController.h"
+#import <Firebase.h>
+#import <UIKit/UIKit.h>
 
 @interface FileStorageViewController ()
 
@@ -16,12 +18,20 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    FIRStorage *storage = [FIRStorage storage];
     // Do any additional setup after loading the view.
+    FIRStorageReference *storageRef = [storage referenceForURL:@"gs://classact-22396.appspot.com"];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (IBAction)UploadButton:(id)sender {
+}
+
+- (IBAction)DownloadButton:(id)sender {
 }
 
 /*

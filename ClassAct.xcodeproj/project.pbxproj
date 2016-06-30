@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		27EFEE3BBE456190E0A58362 /* libPods-ClassAct.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D5D7333FA65AE41E5F4457FA /* libPods-ClassAct.a */; };
-		43729B5E1D241ADF00CD4098 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 43729B5D1D241ADF00CD4098 /* GoogleService-Info.plist */; };
 		43920DE61D22CF1400C6FE12 /* RearViewMenuControllerTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43920DE51D22CF1400C6FE12 /* RearViewMenuControllerTableViewController.m */; };
 		43920DE91D22CFE500C6FE12 /* AgendaMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43920DE81D22CFE500C6FE12 /* AgendaMainViewController.m */; };
 		43920DF01D22ECBE00C6FE12 /* LogInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43920DEF1D22ECBE00C6FE12 /* LogInViewController.m */; };
@@ -18,10 +17,11 @@
 		43C56D891D216B6200C56ECC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 43C56D871D216B6200C56ECC /* Main.storyboard */; };
 		43C56D8B1D216B6200C56ECC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 43C56D8A1D216B6200C56ECC /* Assets.xcassets */; };
 		43C56D8E1D216B6200C56ECC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 43C56D8C1D216B6200C56ECC /* LaunchScreen.storyboard */; };
+		87301EDC1D24465A006F63AF /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 87301EDB1D24465A006F63AF /* GoogleService-Info.plist */; };
+		87301EDF1D244A00006F63AF /* FileStorageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 87301EDE1D244A00006F63AF /* FileStorageViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		43729B5D1D241ADF00CD4098 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		43920DE41D22CF1400C6FE12 /* RearViewMenuControllerTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RearViewMenuControllerTableViewController.h; sourceTree = "<group>"; };
 		43920DE51D22CF1400C6FE12 /* RearViewMenuControllerTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RearViewMenuControllerTableViewController.m; sourceTree = "<group>"; };
 		43920DE71D22CFE500C6FE12 /* AgendaMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AgendaMainViewController.h; sourceTree = "<group>"; };
@@ -39,6 +39,9 @@
 		43C56D8D1D216B6200C56ECC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		43C56D8F1D216B6200C56ECC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4D50ED509BC56FCEBB8F9928 /* Pods-ClassAct.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ClassAct.release.xcconfig"; path = "Pods/Target Support Files/Pods-ClassAct/Pods-ClassAct.release.xcconfig"; sourceTree = "<group>"; };
+		87301EDB1D24465A006F63AF /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		87301EDD1D244A00006F63AF /* FileStorageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FileStorageViewController.h; sourceTree = "<group>"; };
+		87301EDE1D244A00006F63AF /* FileStorageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FileStorageViewController.m; sourceTree = "<group>"; };
 		D5D7333FA65AE41E5F4457FA /* libPods-ClassAct.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ClassAct.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB2DAE71A68E18C2018415FD /* Pods-ClassAct.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ClassAct.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ClassAct/Pods-ClassAct.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -95,10 +98,12 @@
 				43920DE81D22CFE500C6FE12 /* AgendaMainViewController.m */,
 				43920DE41D22CF1400C6FE12 /* RearViewMenuControllerTableViewController.h */,
 				43920DE51D22CF1400C6FE12 /* RearViewMenuControllerTableViewController.m */,
+				87301EDD1D244A00006F63AF /* FileStorageViewController.h */,
+				87301EDE1D244A00006F63AF /* FileStorageViewController.m */,
 				43C56D8A1D216B6200C56ECC /* Assets.xcassets */,
 				43C56D8C1D216B6200C56ECC /* LaunchScreen.storyboard */,
 				43C56D8F1D216B6200C56ECC /* Info.plist */,
-				43729B5D1D241ADF00CD4098 /* GoogleService-Info.plist */,
+				87301EDB1D24465A006F63AF /* GoogleService-Info.plist */,
 				43C56D7E1D216B6200C56ECC /* Supporting Files */,
 			);
 			path = ClassAct;
@@ -128,7 +133,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 43C56D921D216B6200C56ECC /* Build configuration list for PBXNativeTarget "ClassAct" */;
 			buildPhases = (
-				C782E3BB52FE29E5CD48FD57 /* 📦 Check Pods Manifest.lock */,
+				C782E3BB52FE29E5CD48FD57 /* [CP] Check Pods Manifest.lock */,
 				7DCD69196DCECBF47BB0B9AF /* [CP] Check Pods Manifest.lock */,
 				43C56D771D216B6200C56ECC /* Sources */,
 				43C56D781D216B6200C56ECC /* Frameworks */,
@@ -186,7 +191,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				43C56D8E1D216B6200C56ECC /* LaunchScreen.storyboard in Resources */,
-				43729B5E1D241ADF00CD4098 /* GoogleService-Info.plist in Resources */,
+				87301EDC1D24465A006F63AF /* GoogleService-Info.plist in Resources */,
 				43C56D8B1D216B6200C56ECC /* Assets.xcassets in Resources */,
 				43C56D891D216B6200C56ECC /* Main.storyboard in Resources */,
 			);
@@ -240,14 +245,14 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ClassAct/Pods-ClassAct-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		C782E3BB52FE29E5CD48FD57 /* 📦 Check Pods Manifest.lock */ = {
+		C782E3BB52FE29E5CD48FD57 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Check Pods Manifest.lock";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -294,6 +299,7 @@
 			files = (
 				43920DF01D22ECBE00C6FE12 /* LogInViewController.m in Sources */,
 				43C56D831D216B6200C56ECC /* AppDelegate.m in Sources */,
+				87301EDF1D244A00006F63AF /* FileStorageViewController.m in Sources */,
 				43920DF31D230D7C00C6FE12 /* SWRevealViewController.m in Sources */,
 				43C56D801D216B6200C56ECC /* main.m in Sources */,
 				43920DE91D22CFE500C6FE12 /* AgendaMainViewController.m in Sources */,

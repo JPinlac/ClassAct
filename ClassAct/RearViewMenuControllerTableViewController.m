@@ -22,8 +22,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    _menuArray = @[@"Profile", @"Classes", @"Calender", @"Log Out"];
-    _menuImagesArray = @[@"profile.png", @"classesIcon.png", @"calanderIcon.png", @"LogoutIcon.png"];
+    _menuArray = @[@"Profile", @"Classes", @"Calender", @"Storage", @"Log Out"];
+    _menuImagesArray = @[@"profile.png", @"classesIcon.png", @"calanderIcon.png", @"stroage.png", @"LogoutIcon.png"];
     
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;

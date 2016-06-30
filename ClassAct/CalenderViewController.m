@@ -1,37 +1,27 @@
 //
-//  FileStorageViewController.m
+//  CalenderViewController.m
 //  ClassAct
 //
-//  Created by Jeremy Lilje on 6/29/16.
+//  Created by DetroitLabs on 6/30/16.
 //  Copyright © 2016 Detroit Labs. All rights reserved.
 //
 
-#import "FileStorageViewController.h"
-#import <Firebase.h>
-#import <UIKit/UIKit.h>
+#import "CalenderViewController.h"
 
-@interface FileStorageViewController ()
+@interface CalenderViewController ()
 
 @end
 
-@implementation FileStorageViewController
+@implementation CalenderViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-//    FIRStorage *storage = [FIRStorage storage];
     // Do any additional setup after loading the view.
-//    FIRStorageReference *storageRef = [storage referenceForURL:@"gs://classact-22396.appspot.com"];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
-}
-
-- (IBAction)UploadButton:(id)sender {
-}
-
-- (IBAction)DownloadButton:(id)sender {
 }
 
 /*

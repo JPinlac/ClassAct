@@ -12,6 +12,7 @@
 
 @interface LogInViewController ()
 
+
 @end
 
 @implementation LogInViewController
@@ -26,19 +27,7 @@
     
     // Uncomment to automatically sign in the user.
     //[[GIDSignIn sharedInstance] signInSilently];
-}
-- (void)signIn:(GIDSignIn *)signIn
-didSignInForUser:(GIDGoogleUser *)user
-     withError:(NSError *)error {
-    if (error == nil) {
-        GIDAuthentication *authentication = user.authentication;
-        FIRAuthCredential *credential =
-        [FIRGoogleAuthProvider credentialWithIDToken:authentication.idToken
-                                         accessToken:authentication.accessToken];
-        // ...
-    } else {
-        // ...
-    }
+    
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

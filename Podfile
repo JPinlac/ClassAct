@@ -13,6 +13,6 @@ target 'ClassAct' do
   pod 'GoogleSignIn'
   pod 'Firebase/Database'
   pod 'Firebase/Storage'
-
+  pod 'Firebase'
 end
 

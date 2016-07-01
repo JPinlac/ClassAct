@@ -81,6 +81,7 @@
                                sourceApplication:sourceApplication
                                       annotation:annotation];
 }
+
 - (void)signIn:(GIDSignIn *)signIn
 didSignInForUser:(GIDGoogleUser *)user
      withError:(NSError *)error {

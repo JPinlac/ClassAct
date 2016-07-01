@@ -8,12 +8,14 @@
 
 #import "AgendaMainViewController.h"
 #import "SWRevealViewController.h"
+@import Firebase;
 
 @interface AgendaMainViewController ()
 
 @end
 
 @implementation AgendaMainViewController
+FIRDatabaseReference *ref;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -24,6 +26,7 @@
         [self.sideBarButton setAction: @selector( revealToggle: )];
         [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
     }
+    ref = [[FIRDatabase database] reference];
 }
 
 - (void)didReceiveMemoryWarning {

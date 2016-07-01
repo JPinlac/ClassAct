@@ -9,17 +9,21 @@
 #import "LogInViewController.h"
 #import <FBSDKCoreKit/FBSDKCoreKit.h>
 #import <FBSDKLoginKit/FBSDKLoginKit.h>
+@import Firebase;
+
+#import <GoogleSignIn/GoogleSignIn.h>
 
 @interface LogInViewController ()
 
 
 @end
+FIRDatabaseReference *ref;
 
 @implementation LogInViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    ref = [[FIRDatabase database] reference];
     // TODO(developer) Configure the sign-in button look/feel
 //    GIDSignInButton *googleButton  =[[GIDSignInButton alloc] init];
 //    [googleButton sendActionsForControlEvents:UIControlEventTouchUpInside];

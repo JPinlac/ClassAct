@@ -8,13 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		27EFEE3BBE456190E0A58362 /* libPods-ClassAct.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D5D7333FA65AE41E5F4457FA /* libPods-ClassAct.a */; };
+		43132DC61D26A1BD0006B4CD /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 43132DC51D26A1BD0006B4CD /* GoogleService-Info.plist */; };
 		43920DE61D22CF1400C6FE12 /* RearViewMenuControllerTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43920DE51D22CF1400C6FE12 /* RearViewMenuControllerTableViewController.m */; };
 		43920DE91D22CFE500C6FE12 /* AgendaMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43920DE81D22CFE500C6FE12 /* AgendaMainViewController.m */; };
 		43920DF01D22ECBE00C6FE12 /* LogInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43920DEF1D22ECBE00C6FE12 /* LogInViewController.m */; };
 		43920DF31D230D7C00C6FE12 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43920DF21D230D7C00C6FE12 /* SWRevealViewController.m */; };
 		43BFD1401D258CFF00F58EBF /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43BFD13F1D258CFF00F58EBF /* ProfileViewController.m */; };
 		43BFD1431D258D4300F58EBF /* CalenderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43BFD1421D258D4300F58EBF /* CalenderViewController.m */; };
-		43BFD1461D258D7800F58EBF /* LogOutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43BFD1451D258D7800F58EBF /* LogOutViewController.m */; };
 		43BFD1491D258E0F00F58EBF /* ClassesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43BFD1481D258E0F00F58EBF /* ClassesViewController.m */; };
 		43C56D801D216B6200C56ECC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 43C56D7F1D216B6200C56ECC /* main.m */; };
 		43C56D831D216B6200C56ECC /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 43C56D821D216B6200C56ECC /* AppDelegate.m */; };
@@ -22,10 +22,10 @@
 		43C56D8B1D216B6200C56ECC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 43C56D8A1D216B6200C56ECC /* Assets.xcassets */; };
 		43C56D8E1D216B6200C56ECC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 43C56D8C1D216B6200C56ECC /* LaunchScreen.storyboard */; };
 		87301EDF1D244A00006F63AF /* FileStorageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 87301EDE1D244A00006F63AF /* FileStorageViewController.m */; };
-		873BFA201D25A50000C8DD4C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 873BFA1F1D25A50000C8DD4C /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		43132DC51D26A1BD0006B4CD /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		43920DE41D22CF1400C6FE12 /* RearViewMenuControllerTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RearViewMenuControllerTableViewController.h; sourceTree = "<group>"; };
 		43920DE51D22CF1400C6FE12 /* RearViewMenuControllerTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RearViewMenuControllerTableViewController.m; sourceTree = "<group>"; };
 		43920DE71D22CFE500C6FE12 /* AgendaMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AgendaMainViewController.h; sourceTree = "<group>"; };
@@ -38,8 +38,6 @@
 		43BFD13F1D258CFF00F58EBF /* ProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileViewController.m; sourceTree = "<group>"; };
 		43BFD1411D258D4300F58EBF /* CalenderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalenderViewController.h; sourceTree = "<group>"; };
 		43BFD1421D258D4300F58EBF /* CalenderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalenderViewController.m; sourceTree = "<group>"; };
-		43BFD1441D258D7800F58EBF /* LogOutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LogOutViewController.h; sourceTree = "<group>"; };
-		43BFD1451D258D7800F58EBF /* LogOutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LogOutViewController.m; sourceTree = "<group>"; };
 		43BFD1471D258E0F00F58EBF /* ClassesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClassesViewController.h; sourceTree = "<group>"; };
 		43BFD1481D258E0F00F58EBF /* ClassesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClassesViewController.m; sourceTree = "<group>"; };
 		43C56D7B1D216B6200C56ECC /* ClassAct.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ClassAct.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -53,7 +51,6 @@
 		4D50ED509BC56FCEBB8F9928 /* Pods-ClassAct.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ClassAct.release.xcconfig"; path = "Pods/Target Support Files/Pods-ClassAct/Pods-ClassAct.release.xcconfig"; sourceTree = "<group>"; };
 		87301EDD1D244A00006F63AF /* FileStorageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FileStorageViewController.h; sourceTree = "<group>"; };
 		87301EDE1D244A00006F63AF /* FileStorageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FileStorageViewController.m; sourceTree = "<group>"; };
-		873BFA1F1D25A50000C8DD4C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		D5D7333FA65AE41E5F4457FA /* libPods-ClassAct.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ClassAct.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB2DAE71A68E18C2018415FD /* Pods-ClassAct.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ClassAct.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ClassAct/Pods-ClassAct.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -104,8 +101,6 @@
 				43C56D871D216B6200C56ECC /* Main.storyboard */,
 				43BFD1471D258E0F00F58EBF /* ClassesViewController.h */,
 				43BFD1481D258E0F00F58EBF /* ClassesViewController.m */,
-				43BFD1441D258D7800F58EBF /* LogOutViewController.h */,
-				43BFD1451D258D7800F58EBF /* LogOutViewController.m */,
 				43BFD1411D258D4300F58EBF /* CalenderViewController.h */,
 				43BFD1421D258D4300F58EBF /* CalenderViewController.m */,
 				43BFD13E1D258CFF00F58EBF /* ProfileViewController.h */,
@@ -122,8 +117,8 @@
 				87301EDE1D244A00006F63AF /* FileStorageViewController.m */,
 				43C56D8A1D216B6200C56ECC /* Assets.xcassets */,
 				43C56D8C1D216B6200C56ECC /* LaunchScreen.storyboard */,
+				43132DC51D26A1BD0006B4CD /* GoogleService-Info.plist */,
 				43C56D8F1D216B6200C56ECC /* Info.plist */,
-				873BFA1F1D25A50000C8DD4C /* GoogleService-Info.plist */,
 				43C56D7E1D216B6200C56ECC /* Supporting Files */,
 			);
 			path = ClassAct;
@@ -213,7 +208,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				43C56D8E1D216B6200C56ECC /* LaunchScreen.storyboard in Resources */,
-				873BFA201D25A50000C8DD4C /* GoogleService-Info.plist in Resources */,
+				43132DC61D26A1BD0006B4CD /* GoogleService-Info.plist in Resources */,
 				43C56D8B1D216B6200C56ECC /* Assets.xcassets in Resources */,
 				43C56D891D216B6200C56ECC /* Main.storyboard in Resources */,
 			);
@@ -351,7 +346,6 @@
 			files = (
 				43920DF01D22ECBE00C6FE12 /* LogInViewController.m in Sources */,
 				43BFD1431D258D4300F58EBF /* CalenderViewController.m in Sources */,
-				43BFD1461D258D7800F58EBF /* LogOutViewController.m in Sources */,
 				43C56D831D216B6200C56ECC /* AppDelegate.m in Sources */,
 				43BFD1401D258CFF00F58EBF /* ProfileViewController.m in Sources */,
 				87301EDF1D244A00006F63AF /* FileStorageViewController.m in Sources */,

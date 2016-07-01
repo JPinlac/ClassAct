@@ -22,8 +22,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    _menuArray = @[@"Profile", @"Classes", @"Calender", @"Storage", @"Log Out"];
-    _menuImagesArray = @[@"profile.png", @"classesIcon.png", @"calanderIcon.png", @"stroage.png", @"LogoutIcon.png"];
+    _menuArray = @[@"profile", @"classes", @"calender", @"storage", @"agenda", @"logOut"];
+    _menuImagesArray = @[@"profile.png", @"classesIcon.png", @"calanderIcon.png", @"storage.png", @"agenda.png", @"LogoutIcon.png"];
     
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -40,50 +40,56 @@
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return [self.menuArray count];
-}
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return 1;
 }
 
-- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
-    return 20.;
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return [_menuArray count];
 }
 
-- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
-    UIView *headerView = [[UIView alloc] init];
-    headerView.backgroundColor = [UIColor clearColor];
-    return headerView;
-}
+//- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
+//    return 20.;
+//}
+//
+//- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
+//    UIView *headerView = [[UIView alloc] init];
+//    headerView.backgroundColor = [UIColor clearColor];
+//    return headerView;
+//}
 
--(UITableViewCell *)tableView:(UITableView *)tableView
-        cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    static NSString *CellIdentifier =@"Cell";
-    UITableViewCell *cell = [tableView
-                             dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    NSString *CellIdentifier = [_menuArray objectAtIndex:indexPath.row];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     [cell.textLabel setFont:[UIFont systemFontOfSize:26.0]];
-    cell.textLabel.text=[self.menuArray objectAtIndex:indexPath.section];
-//    cell.backgroundColor = [UIColor cyanColor];
-    cell.imageView.image = [UIImage imageNamed:[_menuImagesArray objectAtIndex:indexPath.section]];
-    
     return cell;
 }
+//-(UITableViewCell *)tableView:(UITableView *)tableView
+//        cellForRowAtIndexPath:(NSIndexPath *)indexPath
+//{
+//    static NSString *CellIdentifier =@"Cell";
+//    UITableViewCell *cell = [tableView
+//                             dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+//    [cell.textLabel setFont:[UIFont systemFontOfSize:26.0]];
+//    cell.textLabel.text=[self.menuArray objectAtIndex:indexPath.section];
+////    cell.backgroundColor = [UIColor cyanColor];
+//    cell.imageView.image = [UIImage imageNamed:[_menuImagesArray objectAtIndex:indexPath.section]];
+//    
+//    return cell;
+//}
 
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    
-    // Set the title of navigation bar by using the menu items
-    NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-    UINavigationController *destViewController = (UINavigationController*)segue.destinationViewController;
-    destViewController.title = [[_menuArray objectAtIndex:indexPath.row] capitalizedString];
-    
-    // Set the photo if it navigates to the PhotoView
-    if ([segue.identifier isEqualToString:@"ClassesSegue"]) {
-        UINavigationController *navController = segue.destinationViewController;
-    } else if ([segue.identifier isEqualToString:@"Profile"]) {
-        UINavigationController *nav2 = segue.destinationViewController;
-    } 
-}
+//- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+//    
+//    // Set the title of navigation bar by using the menu items
+//    NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+//    UINavigationController *destViewController = (UINavigationController*)segue.destinationViewController;
+//    destViewController.title = [[_menuArray objectAtIndex:indexPath.row] capitalizedString];
+//    
+//    // Set the photo if it navigates to the PhotoView
+//    if ([segue.identifier isEqualToString:@"ClassesSegue"]) {
+//        UINavigationController *navController = segue.destinationViewController;
+//    } else if ([segue.identifier isEqualToString:@"Profile"]) {
+//        UINavigationController *nav2 = segue.destinationViewController;
+//    } 
+//}
 
 @end

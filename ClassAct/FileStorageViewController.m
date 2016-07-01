@@ -7,6 +7,7 @@
 //
 
 #import "FileStorageViewController.h"
+#import "SWRevealViewController.h"
 #import <Firebase.h>
 #import <UIKit/UIKit.h>
 
@@ -18,6 +19,13 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    SWRevealViewController *revealViewController = self.revealViewController;
+    if ( revealViewController )
+    {
+        [self.sideBarButton setTarget: self.revealViewController];
+        [self.sideBarButton setAction: @selector( revealToggle: )];
+        [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
+    }
 //    FIRStorage *storage = [FIRStorage storage];
     // Do any additional setup after loading the view.
 //    FIRStorageReference *storageRef = [storage referenceForURL:@"gs://classact-22396.appspot.com"];

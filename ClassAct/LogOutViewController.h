@@ -10,4 +10,6 @@
 
 @interface LogOutViewController : UIViewController
 
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *sideBarButton;
+
 @end

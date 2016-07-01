@@ -11,11 +11,11 @@
 @import Firebase;
 
 @interface AgendaMainViewController ()
+@property FIRDatabaseReference *ref;
 
 @end
 
 @implementation AgendaMainViewController
-FIRDatabaseReference *ref;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -26,7 +26,7 @@ FIRDatabaseReference *ref;
         [self.sideBarButton setAction: @selector( revealToggle: )];
         [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
     }
-    ref = [[FIRDatabase database] reference];
+    _ref = [[FIRDatabase database] reference];
 }
 
 - (void)didReceiveMemoryWarning {

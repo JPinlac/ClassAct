@@ -10,4 +10,6 @@
 
 @interface FileStorageViewController : UIViewController
 
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *sideBarButton;
+
 @end

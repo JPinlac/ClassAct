@@ -4,11 +4,13 @@
 
   },
   "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "3E3E68CBB4DF3F86D3403EB8F3C4CCACD9E387B5" : 0,
     "01529694042D8C98B30DC19F4D4370A306884FE4" : 0,
     "5F26E14DEA216FF335EAFAA76042CA142C240A55" : 0
   },
   "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "35C2977F-4D91-41E3-8481-4FAC56EAEF91",
   "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "3E3E68CBB4DF3F86D3403EB8F3C4CCACD9E387B5" : "",
     "01529694042D8C98B30DC19F4D4370A306884FE4" : "SWRevealViewController\/",
     "5F26E14DEA216FF335EAFAA76042CA142C240A55" : "ClassAct\/"
   },
@@ -20,6 +22,11 @@
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/John-Lluch\/SWRevealViewController.git",
       "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "01529694042D8C98B30DC19F4D4370A306884FE4"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "github.com:JPinlac\/apprenticeship-classwork.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "3E3E68CBB4DF3F86D3403EB8F3C4CCACD9E387B5"
     },
     {
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "github.com:JPinlac\/ClassAct.git",

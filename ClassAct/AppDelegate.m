@@ -8,13 +8,23 @@
 
 #import "AppDelegate.h"
 #import <FBSDKCoreKit/FBSDKCoreKit.h>
+#import "LogInViewController.h"
+
 
 @interface AppDelegate ()
+
+@property (nonatomic, strong) UIViewController *callDismissOnMe;
 
 @end
 
 @implementation AppDelegate
 
+- (void)dismissLoginView
+{
+    
+    [_callDismissOnMe dismissViewControllerAnimated:YES completion:nil];
+//    _callDismissOnMe = nil; // don't need it now, this unretains it
+}
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     [[FBSDKApplicationDelegate sharedInstance] application:application
@@ -24,7 +34,24 @@
     
     [GIDSignIn sharedInstance].clientID = [FIRApp defaultApp].options.clientID;
     [GIDSignIn sharedInstance].delegate = self;
+    
+    if([FIRAuth auth].currentUser == nil) {
+        [self showLoginScreen:NO];
+    }
     return YES;
+}
+
+-(void) showLoginScreen:(BOOL)animated
+{
+    
+    // Get login screen from storyboard and present it
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    LogInViewController *viewController = (LogInViewController *)[storyboard instantiateViewControllerWithIdentifier:@"loginVC"];
+    _callDismissOnMe = viewController;
+    [self.window makeKeyAndVisible];
+    [self.window.rootViewController presentViewController:viewController
+                                                 animated:animated
+                                               completion:nil];
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {
@@ -52,15 +79,15 @@
 
 //- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url
 //  sourceApplication:(NSString *)sourceApplication annotation:(id)annotation {
-//    
+//
 //    BOOL handled = [[FBSDKApplicationDelegate sharedInstance] application:application
 //                                                                  openURL:url
 //                                                        sourceApplication:sourceApplication
 //                                                               annotation:annotation
 //                    ];
 //    // Add any custom logic here.
-//    
-//    
+//
+//
 //    return handled;
 //}
 #pragma googe auth
@@ -81,7 +108,6 @@
                                sourceApplication:sourceApplication
                                       annotation:annotation];
 }
-
 - (void)signIn:(GIDSignIn *)signIn
 didSignInForUser:(GIDGoogleUser *)user
      withError:(NSError *)error {
@@ -94,12 +120,13 @@ didSignInForUser:(GIDGoogleUser *)user
                                   completion:^(FIRUser *user, NSError *error) {
                                       // ...
                                   }];
-//        NSString *userId = user.userID;                  // For client-side use only!
-//        NSString *idToken = user.authentication.idToken; // Safe to send to the server
-//        NSString *fullName = user.profile.name;
-//        NSString *givenName = user.profile.givenName;
-//        NSString *familyName = user.profile.familyName;
-//        NSString *email = user.profile.email;
+        //        NSString *userId = user.userID;                  // For client-side use only!
+        //        NSString *idToken = user.authentication.idToken; // Safe to send to the server
+        //        NSString *fullName = user.profile.name;
+        //        NSString *givenName = user.profile.givenName;
+        //        NSString *familyName = user.profile.familyName;
+        //        NSString *email = user.profile.email;
+        [self dismissLoginView];
     } else {
         NSLog(@"%@", error.localizedDescription);
     }

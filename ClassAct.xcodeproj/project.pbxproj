@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		27EFEE3BBE456190E0A58362 /* libPods-ClassAct.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D5D7333FA65AE41E5F4457FA /* libPods-ClassAct.a */; };
 		43132DC61D26A1BD0006B4CD /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 43132DC51D26A1BD0006B4CD /* GoogleService-Info.plist */; };
+		438E782A1D26CE1000191F71 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 438E78291D26CE1000191F71 /* Main.storyboard */; };
 		43920DE61D22CF1400C6FE12 /* RearViewMenuControllerTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43920DE51D22CF1400C6FE12 /* RearViewMenuControllerTableViewController.m */; };
 		43920DE91D22CFE500C6FE12 /* AgendaMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43920DE81D22CFE500C6FE12 /* AgendaMainViewController.m */; };
 		43920DF01D22ECBE00C6FE12 /* LogInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43920DEF1D22ECBE00C6FE12 /* LogInViewController.m */; };
@@ -18,7 +19,6 @@
 		43BFD1491D258E0F00F58EBF /* ClassesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43BFD1481D258E0F00F58EBF /* ClassesViewController.m */; };
 		43C56D801D216B6200C56ECC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 43C56D7F1D216B6200C56ECC /* main.m */; };
 		43C56D831D216B6200C56ECC /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 43C56D821D216B6200C56ECC /* AppDelegate.m */; };
-		43C56D891D216B6200C56ECC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 43C56D871D216B6200C56ECC /* Main.storyboard */; };
 		43C56D8B1D216B6200C56ECC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 43C56D8A1D216B6200C56ECC /* Assets.xcassets */; };
 		43C56D8E1D216B6200C56ECC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 43C56D8C1D216B6200C56ECC /* LaunchScreen.storyboard */; };
 		87301EDF1D244A00006F63AF /* FileStorageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 87301EDE1D244A00006F63AF /* FileStorageViewController.m */; };
@@ -26,6 +26,7 @@
 
 /* Begin PBXFileReference section */
 		43132DC51D26A1BD0006B4CD /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		438E78291D26CE1000191F71 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		43920DE41D22CF1400C6FE12 /* RearViewMenuControllerTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RearViewMenuControllerTableViewController.h; sourceTree = "<group>"; };
 		43920DE51D22CF1400C6FE12 /* RearViewMenuControllerTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RearViewMenuControllerTableViewController.m; sourceTree = "<group>"; };
 		43920DE71D22CFE500C6FE12 /* AgendaMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AgendaMainViewController.h; sourceTree = "<group>"; };
@@ -44,7 +45,6 @@
 		43C56D7F1D216B6200C56ECC /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		43C56D811D216B6200C56ECC /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		43C56D821D216B6200C56ECC /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		43C56D881D216B6200C56ECC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		43C56D8A1D216B6200C56ECC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		43C56D8D1D216B6200C56ECC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		43C56D8F1D216B6200C56ECC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -96,9 +96,9 @@
 		43C56D7D1D216B6200C56ECC /* ClassAct */ = {
 			isa = PBXGroup;
 			children = (
+				438E78291D26CE1000191F71 /* Main.storyboard */,
 				43C56D811D216B6200C56ECC /* AppDelegate.h */,
 				43C56D821D216B6200C56ECC /* AppDelegate.m */,
-				43C56D871D216B6200C56ECC /* Main.storyboard */,
 				43BFD1471D258E0F00F58EBF /* ClassesViewController.h */,
 				43BFD1481D258E0F00F58EBF /* ClassesViewController.m */,
 				43BFD1411D258D4300F58EBF /* CalenderViewController.h */,
@@ -210,7 +210,7 @@
 				43C56D8E1D216B6200C56ECC /* LaunchScreen.storyboard in Resources */,
 				43132DC61D26A1BD0006B4CD /* GoogleService-Info.plist in Resources */,
 				43C56D8B1D216B6200C56ECC /* Assets.xcassets in Resources */,
-				43C56D891D216B6200C56ECC /* Main.storyboard in Resources */,
+				438E782A1D26CE1000191F71 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -360,14 +360,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		43C56D871D216B6200C56ECC /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				43C56D881D216B6200C56ECC /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		43C56D8C1D216B6200C56ECC /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

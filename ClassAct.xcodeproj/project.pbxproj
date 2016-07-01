@@ -148,7 +148,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 43C56D921D216B6200C56ECC /* Build configuration list for PBXNativeTarget "ClassAct" */;
 			buildPhases = (
-				2851110C3412B2FD2C0ED8BA /* 📦 Check Pods Manifest.lock */,
+				2851110C3412B2FD2C0ED8BA /* [CP] Check Pods Manifest.lock */,
 				8A27B02225504A7302E0C365 /* [CP] Check Pods Manifest.lock */,
 				C782E3BB52FE29E5CD48FD57 /* [CP] Check Pods Manifest.lock */,
 				7DCD69196DCECBF47BB0B9AF /* [CP] Check Pods Manifest.lock */,
@@ -232,14 +232,14 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ClassAct/Pods-ClassAct-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		2851110C3412B2FD2C0ED8BA /* 📦 Check Pods Manifest.lock */ = {
+		2851110C3412B2FD2C0ED8BA /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Check Pods Manifest.lock";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;

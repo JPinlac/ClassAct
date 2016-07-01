@@ -11,6 +11,8 @@
 #import "LogOutViewController.h"
 #import "CalenderViewController.h"
 #import "ProfileViewController.h"
+#import "LogInViewController.h"
+
 @import Firebase;
 
 #import <GoogleSignIn/GoogleSignIn.h>
@@ -72,6 +74,10 @@
     [[FIRAuth auth] signOut:&error];
     if (!error) {
         NSLog(@"User is signed out");
+        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+        LogInViewController *viewController = (LogInViewController *)[storyboard instantiateViewControllerWithIdentifier:@"loginVC"];
+        [self presentViewController:viewController animated:YES completion:nil];
+        
     }}
 }
 

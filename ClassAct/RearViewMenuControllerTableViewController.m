@@ -11,7 +11,9 @@
 #import "LogOutViewController.h"
 #import "CalenderViewController.h"
 #import "ProfileViewController.h"
+@import Firebase;
 
+#import <GoogleSignIn/GoogleSignIn.h>
 
 @interface RearViewMenuControllerTableViewController ()
 
@@ -63,19 +65,15 @@
     [cell.textLabel setFont:[UIFont systemFontOfSize:26.0]];
     return cell;
 }
-//-(UITableViewCell *)tableView:(UITableView *)tableView
-//        cellForRowAtIndexPath:(NSIndexPath *)indexPath
-//{
-//    static NSString *CellIdentifier =@"Cell";
-//    UITableViewCell *cell = [tableView
-//                             dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
-//    [cell.textLabel setFont:[UIFont systemFontOfSize:26.0]];
-//    cell.textLabel.text=[self.menuArray objectAtIndex:indexPath.section];
-////    cell.backgroundColor = [UIColor cyanColor];
-//    cell.imageView.image = [UIImage imageNamed:[_menuImagesArray objectAtIndex:indexPath.section]];
-//    
-//    return cell;
-//}
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (indexPath.row == 5){
+    NSError *error;
+    [[FIRAuth auth] signOut:&error];
+    if (!error) {
+        NSLog(@"User is signed out");
+    }}
+}
 
 //- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
 //    

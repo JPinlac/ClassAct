@@ -297,9 +297,6 @@
                                         </imageView>
                                     </subviews>
                                 </tableViewCellContentView>
-                                <connections>
-                                    <segue destination="R2t-Jg-Wml" kind="custom" identifier="logOutSegue" customClass="SWRevealViewControllerSeguePushController" id="fUj-Z6-7dr"/>
-                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <sections/>
@@ -403,30 +400,6 @@
             </objects>
             <point key="canvasLocation" x="2366" y="-28"/>
         </scene>
-        <!--Log Out-->
-        <scene sceneID="I5D-NC-dw0">
-            <objects>
-                <viewController id="8th-5f-dfr" customClass="LogOutViewController" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="UDN-kV-NHG"/>
-                        <viewControllerLayoutGuide type="bottom" id="s17-fR-zZL"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="onR-k2-ySi">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <navigationItem key="navigationItem" title="Log Out" id="sue-DY-xd1">
-                        <barButtonItem key="leftBarButtonItem" image="menu.png" id="ueV-SV-yYV"/>
-                    </navigationItem>
-                    <connections>
-                        <outlet property="sideBarButton" destination="ueV-SV-yYV" id="zyX-mG-77B"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Sjj-kO-BbJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2184" y="585"/>
-        </scene>
         <!--Navigation Controller-->
         <scene sceneID="2D3-eG-XQ4">
             <objects>
@@ -482,24 +455,6 @@
             <point key="canvasLocation" x="2400" y="-661"/>
         </scene>
         <!--Navigation Controller-->
-        <scene sceneID="Ij7-KL-k26">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="R2t-Jg-Wml" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Jhn-st-otN">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="8th-5f-dfr" kind="relationship" relationship="rootViewController" id="9O7-Zp-hGq"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="nr8-fz-SY7" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1780" y="585"/>
-        </scene>
-        <!--Navigation Controller-->
         <scene sceneID="csF-gy-kCd">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Urn-HX-xu9" sceneMemberID="viewController">
@@ -541,7 +496,7 @@
         <image name="agenda" width="160" height="160"/>
         <image name="calanderIcon" width="225" height="225"/>
         <image name="classesIcon" width="225" height="225"/>
-        <image name="menu.png" width="28" height="20"/>
+        <image name="menu.png" width="510" height="170"/>
         <image name="profile" width="160" height="162"/>
         <image name="storage" width="204" height="204"/>
     </resources>

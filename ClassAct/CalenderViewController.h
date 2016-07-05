@@ -11,6 +11,6 @@
 #import "GTMOAuth2ViewControllerTouch.h"
 @interface CalenderViewController : UIViewController
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *sideBarButton;
-@property (nonatomic, strong) GTLServiceCalendar *service;
+@property (nonatomic, strong) GTLServiceCalendar *cservice;
 @property (nonatomic, strong) UITextView *output;
 @end

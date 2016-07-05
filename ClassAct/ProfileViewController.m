@@ -8,9 +8,12 @@
 
 #import "ProfileViewController.h"
 #import "SWRevealViewController.h"
+@import Firebase;
+
+#import <GoogleSignIn/GoogleSignIn.h>
 
 @interface ProfileViewController ()
-
+@property (nonatomic, strong)    FIRUser *userObj;
 @end
 
 @implementation ProfileViewController
@@ -25,7 +28,14 @@
         [self.sideBarButton setAction: @selector( revealToggle: )];
         [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
     }
+    _userObj = [FIRAuth auth].currentUser;
     
+    if (_userObj != nil) {
+        
+    } else {
+        // No user is signed in.
+    }
+    [self populateLabels];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -42,5 +52,16 @@
     // Pass the selected object to the new view controller.
 }
 */
+-(void)populateLabels{
+    _nameLabel.text = _userObj.displayName;
+    _emailLabel.text = _userObj.email;
+    
+    NSData *imageData = [NSData dataWithContentsOfURL:_userObj.photoURL];
+    self.profileImage.image = [UIImage imageWithData:imageData];
+//    _profileImage = _userObj.photoURL;
+    
+}
+
+
 
 @end

@@ -31,7 +31,8 @@
     _ref = [[FIRDatabase database] reference];
     
     _cservice = [(AppDelegate *)[[UIApplication sharedApplication] delegate] calendarService];
-
+    
+    [self findMotivation];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -43,7 +44,16 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
+- (void) findMotivation {
+    NSArray *motivations = @[@"\"Only after the wall is broken will you find the answer.\" - Jon",
+                             @"\"Your head is the best tool to break down barriers\" - Jon",
+                             @"\"Quitting is for quitters and you're not a quitter!\" - Anonymous",
+                             @"\"Yesterday you said tomorrow.\" -Anonymous",
+                             @"\"Never forget to love yourself\" - Anonymous",
+                             @"\"Don't cling to a mistake just because you spent a lot of time making it.\" - Aubrey de Gray"];
+    int choice = arc4random_uniform((int)motivations.count);
+    _quoteLabel.text = motivations[choice];
+}
 - (void)fetchEvents {
     GTLQueryCalendar *query = [GTLQueryCalendar queryForEventsListWithCalendarId:@"primary"];
     query.maxResults = 10;
@@ -63,7 +73,6 @@
     if (error == nil) {
         NSMutableString *eventString = [[NSMutableString alloc] init];
         if (events.items.count > 0) {
-            [eventString appendString:@"Upcoming 10 events:\n"];
             for (GTLCalendarEvent *event in events) {
                 GTLDateTime *start = event.start.dateTime ?: event.start.date;
                 NSString *startString =

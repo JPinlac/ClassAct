@@ -87,7 +87,7 @@
                                 <rect key="frame" x="20" y="518" width="241" height="30"/>
                                 <state key="normal" title="Upload / Download Files"/>
                                 <connections>
-                                    <segue destination="fmf-Iq-Q4B" kind="push" id="0Io-ld-37I"/>
+                                    <segue destination="7Eh-gI-D29" kind="push" id="0Io-ld-37I"/>
                                 </connections>
                             </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Brain massages - ALL DAY" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="5f8-3M-o2K">
@@ -182,7 +182,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kwI-ef-GBC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1447" y="659"/>
+            <point key="canvasLocation" x="1979" y="659"/>
         </scene>
         <!--Rear View Menu Controller Table View Controller-->
         <scene sceneID="8bk-ai-jCg">
@@ -293,7 +293,7 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="fmf-Iq-Q4B" kind="custom" identifier="fileSegue" customClass="SWRevealViewControllerSeguePushController" id="2ev-CJ-Yff"/>
+                                    <segue destination="7Eh-gI-D29" kind="custom" identifier="fileSegue" customClass="SWRevealViewControllerSeguePushController" id="2ev-CJ-Yff"/>
                                 </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" indentationWidth="10" reuseIdentifier="agenda" textLabel="JGk-aE-9hZ" imageView="FB1-Zm-Hrg" style="IBUITableViewCellStyleDefault" id="Ncc-eY-JDb">
@@ -625,6 +625,25 @@
             </objects>
             <point key="canvasLocation" x="2397" y="-20"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="CJs-Ao-HAj">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="7Eh-gI-D29" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="sph-KS-P9Y"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="nsu-IV-OgR">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="fmf-Iq-Q4B" kind="relationship" relationship="rootViewController" id="muo-5s-MG3"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ihd-O6-nbE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1447" y="659"/>
+        </scene>
     </scenes>
     <resources>
         <image name="LogoutIcon" width="225" height="225"/>
@@ -637,7 +656,7 @@
         <image name="storage" width="204" height="204"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="2ev-CJ-Yff"/>
         <segue reference="bZB-IO-C26"/>
-        <segue reference="0Io-ld-37I"/>
     </inferredMetricsTieBreakers>
 </document>

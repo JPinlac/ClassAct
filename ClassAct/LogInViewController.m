@@ -9,17 +9,22 @@
 #import "LogInViewController.h"
 #import <FBSDKCoreKit/FBSDKCoreKit.h>
 #import <FBSDKLoginKit/FBSDKLoginKit.h>
+#import "ChatViewController.h"
+@import Firebase;
+
+#import <GoogleSignIn/GoogleSignIn.h>
 
 @interface LogInViewController ()
 
-
 @end
+FIRDatabaseReference *ref;
+
 
 @implementation LogInViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    ref = [[FIRDatabase database] reference];
     // TODO(developer) Configure the sign-in button look/feel
 //    GIDSignInButton *googleButton  =[[GIDSignInButton alloc] init];
 //    [googleButton sendActionsForControlEvents:UIControlEventTouchUpInside];
@@ -33,6 +38,7 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
 
 
 @end

@@ -21,6 +21,7 @@
 		43C56D831D216B6200C56ECC /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 43C56D821D216B6200C56ECC /* AppDelegate.m */; };
 		43C56D8B1D216B6200C56ECC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 43C56D8A1D216B6200C56ECC /* Assets.xcassets */; };
 		43C56D8E1D216B6200C56ECC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 43C56D8C1D216B6200C56ECC /* LaunchScreen.storyboard */; };
+		43D0EB3F1D2A04C1001E6A5E /* ChatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43D0EB3E1D2A04C1001E6A5E /* ChatViewController.m */; };
 		87301EDF1D244A00006F63AF /* FileStorageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 87301EDE1D244A00006F63AF /* FileStorageViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -48,6 +49,8 @@
 		43C56D8A1D216B6200C56ECC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		43C56D8D1D216B6200C56ECC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		43C56D8F1D216B6200C56ECC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		43D0EB3D1D2A04C1001E6A5E /* ChatViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatViewController.h; sourceTree = "<group>"; };
+		43D0EB3E1D2A04C1001E6A5E /* ChatViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatViewController.m; sourceTree = "<group>"; };
 		4D50ED509BC56FCEBB8F9928 /* Pods-ClassAct.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ClassAct.release.xcconfig"; path = "Pods/Target Support Files/Pods-ClassAct/Pods-ClassAct.release.xcconfig"; sourceTree = "<group>"; };
 		87301EDD1D244A00006F63AF /* FileStorageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FileStorageViewController.h; sourceTree = "<group>"; };
 		87301EDE1D244A00006F63AF /* FileStorageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FileStorageViewController.m; sourceTree = "<group>"; };
@@ -97,6 +100,8 @@
 			isa = PBXGroup;
 			children = (
 				438E78291D26CE1000191F71 /* Main.storyboard */,
+				43D0EB3D1D2A04C1001E6A5E /* ChatViewController.h */,
+				43D0EB3E1D2A04C1001E6A5E /* ChatViewController.m */,
 				43C56D811D216B6200C56ECC /* AppDelegate.h */,
 				43C56D821D216B6200C56ECC /* AppDelegate.m */,
 				43BFD1471D258E0F00F58EBF /* ClassesViewController.h */,
@@ -148,6 +153,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 43C56D921D216B6200C56ECC /* Build configuration list for PBXNativeTarget "ClassAct" */;
 			buildPhases = (
+				C88C385805C8FEF237E6F1DC /* 📦 Check Pods Manifest.lock */,
 				2851110C3412B2FD2C0ED8BA /* [CP] Check Pods Manifest.lock */,
 				8A27B02225504A7302E0C365 /* [CP] Check Pods Manifest.lock */,
 				C782E3BB52FE29E5CD48FD57 /* [CP] Check Pods Manifest.lock */,
@@ -307,6 +313,21 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
+		C88C385805C8FEF237E6F1DC /* 📦 Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
 		D75E0A64D588E5E7D841CEFC /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -346,6 +367,7 @@
 			files = (
 				43920DF01D22ECBE00C6FE12 /* LogInViewController.m in Sources */,
 				43BFD1431D258D4300F58EBF /* CalenderViewController.m in Sources */,
+				43D0EB3F1D2A04C1001E6A5E /* ChatViewController.m in Sources */,
 				43C56D831D216B6200C56ECC /* AppDelegate.m in Sources */,
 				43BFD1401D258CFF00F58EBF /* ProfileViewController.m in Sources */,
 				87301EDF1D244A00006F63AF /* FileStorageViewController.m in Sources */,

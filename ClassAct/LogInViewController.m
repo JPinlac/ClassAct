@@ -9,15 +9,16 @@
 #import "LogInViewController.h"
 #import <FBSDKCoreKit/FBSDKCoreKit.h>
 #import <FBSDKLoginKit/FBSDKLoginKit.h>
+#import "ChatViewController.h"
 @import Firebase;
 
 #import <GoogleSignIn/GoogleSignIn.h>
 
 @interface LogInViewController ()
 
-
 @end
 FIRDatabaseReference *ref;
+
 
 @implementation LogInViewController
 
@@ -37,6 +38,7 @@ FIRDatabaseReference *ref;
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
 
 
 @end

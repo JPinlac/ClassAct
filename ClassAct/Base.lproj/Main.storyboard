@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -17,17 +17,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KLW-qM-R2J">
-                                <rect key="frame" x="254" y="518" width="46" height="30"/>
-                                <state key="normal" title="Button"/>
-                                <connections>
-                                    <segue destination="BYZ-38-t0r" kind="modal" id="les-9h-Mg1"/>
-                                </connections>
-                            </button>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4kQ-J8-h9J" customClass="GIDSignInButton">
                                 <rect key="frame" x="40" y="268" width="240" height="45"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KLW-qM-R2J">
+                                <rect key="frame" x="26" y="496" width="268" height="30"/>
+                                <state key="normal" title="Skip Logon (for testing only)"/>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="modal" id="les-9h-Mg1"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -83,8 +83,8 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jrk-In-oEZ">
-                                <rect key="frame" x="254" y="287" width="46" height="30"/>
-                                <state key="normal" title="Button"/>
+                                <rect key="frame" x="28" y="287" width="241" height="30"/>
+                                <state key="normal" title="Upload / Download Files"/>
                                 <connections>
                                     <segue destination="fmf-Iq-Q4B" kind="push" id="0Io-ld-37I"/>
                                 </connections>
@@ -117,19 +117,47 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="smd-iH-V99">
-                                <rect key="frame" x="27" y="127" width="77" height="30"/>
-                                <state key="normal" title="Upload File"/>
+                                <rect key="frame" x="205" y="95" width="104" height="30"/>
+                                <color key="backgroundColor" red="0.090759877040000006" green="0.27326677859999998" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Upload File">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
                                 <connections>
                                     <action selector="UploadButton:" destination="fmf-Iq-Q4B" eventType="touchUpInside" id="mdk-do-J7X"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="76E-j2-5hy">
-                                <rect key="frame" x="20" y="204" width="96" height="30"/>
-                                <state key="normal" title="Download File"/>
+                                <rect key="frame" x="205" y="328" width="104" height="30"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Download File">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
                                 <connections>
                                     <action selector="DownloadButton:" destination="fmf-Iq-Q4B" eventType="touchUpInside" id="sQs-vX-uA9"/>
                                 </connections>
                             </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dKx-pu-BxX">
+                                <rect key="frame" x="20" y="95" width="172" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6oZ-2M-SKn">
+                                <rect key="frame" x="20" y="328" width="172" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="OGm-N2-iF2">
+                                <rect key="frame" x="14" y="363" width="295" height="192"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="YD5-Kw-8UT">
+                                <rect key="frame" x="20" y="133" width="289" height="168"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -137,6 +165,10 @@
                         <barButtonItem key="leftBarButtonItem" image="menu.png" id="KbH-X2-GpQ"/>
                     </navigationItem>
                     <connections>
+                        <outlet property="DownloadFileTextField" destination="6oZ-2M-SKn" id="oe4-Ym-uo9"/>
+                        <outlet property="DownloadFileTextView" destination="OGm-N2-iF2" id="vYQ-NW-FpD"/>
+                        <outlet property="UploadFileTextField" destination="dKx-pu-BxX" id="qf5-CB-cvz"/>
+                        <outlet property="UploadFileTextView" destination="YD5-Kw-8UT" id="q3j-ga-gkP"/>
                         <outlet property="sideBarButton" destination="KbH-X2-GpQ" id="NB0-wV-yFS"/>
                     </connections>
                 </viewController>

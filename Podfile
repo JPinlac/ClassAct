@@ -14,5 +14,6 @@ target 'ClassAct' do
   pod 'Firebase/Database'
   pod 'Firebase/Storage'
   pod 'Firebase'
+  pod 'JSQMessagesViewController'
 end
 

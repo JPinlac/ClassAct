@@ -12,13 +12,14 @@
 #import "CalenderViewController.h"
 #import "ProfileViewController.h"
 #import "LogInViewController.h"
+#import "ChatViewController.h"
 
 @import Firebase;
 
 #import <GoogleSignIn/GoogleSignIn.h>
 
 @interface RearViewMenuControllerTableViewController ()
-
+@property (nonatomic, strong)    FIRUser *userObj;
 @end
 
 @implementation RearViewMenuControllerTableViewController
@@ -26,8 +27,16 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    _menuArray = @[@"profile", @"classes", @"calender", @"storage", @"agenda", @"logOut"];
-    _menuImagesArray = @[@"profile.png", @"classesIcon.png", @"calanderIcon.png", @"storage.png", @"agenda.png", @"LogoutIcon.png"];
+    _menuArray = @[@"profile", @"classes", @"calender", @"storage", @"agenda", @"chat", @"logOut"];
+    _menuImagesArray = @[@"profile.png", @"classesIcon.png", @"calanderIcon.png", @"storage.png", @"agenda.png", @"chatIcon.png", @"LogoutIcon.png"];
+    
+    _userObj = [FIRAuth auth].currentUser;
+    
+    if (_userObj != nil) {
+
+    } else {
+        // No user is signed in.
+    }
     
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -40,6 +49,7 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
 
 #pragma mark - Table view data source
 
@@ -69,7 +79,7 @@
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (indexPath.row == 5){
+    if (indexPath.row == 6){
     NSError *error;
     [[FIRAuth auth] signOut:&error];
     if (!error) {
@@ -81,19 +91,13 @@
     }}
 }
 
-//- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-//    
-//    // Set the title of navigation bar by using the menu items
-//    NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-//    UINavigationController *destViewController = (UINavigationController*)segue.destinationViewController;
-//    destViewController.title = [[_menuArray objectAtIndex:indexPath.row] capitalizedString];
-//    
-//    // Set the photo if it navigates to the PhotoView
-//    if ([segue.identifier isEqualToString:@"ClassesSegue"]) {
-//        UINavigationController *navController = segue.destinationViewController;
-//    } else if ([segue.identifier isEqualToString:@"Profile"]) {
-//        UINavigationController *nav2 = segue.destinationViewController;
-//    } 
-//}
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    if( [segue.identifier isEqualToString:@"chatSegue"]){
+        UINavigationController * navVc = [segue destinationViewController] ;
+        ChatViewController * chatVc = [navVc.viewControllers firstObject] ;
+        chatVc.senderId = _userObj.displayName;
+        chatVc.senderDisplayName = @"";
+    }
+}
 
 @end

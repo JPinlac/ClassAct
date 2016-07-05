@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -153,7 +153,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <label key="tableFooterView" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Class Act" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="eOc-eN-VZV">
-                            <rect key="frame" x="0.0" y="356" width="320" height="132"/>
+                            <rect key="frame" x="0.0" y="400" width="320" height="132"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -277,21 +277,45 @@
                                     <segue destination="wpE-WX-yap" kind="custom" identifier="agendaSegue" customClass="SWRevealViewControllerSeguePushController" id="bZB-IO-C26"/>
                                 </connections>
                             </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" indentationWidth="10" reuseIdentifier="logOut" textLabel="cNs-Iq-7DX" imageView="4GS-NQ-WyY" style="IBUITableViewCellStyleDefault" id="GLg-tj-ghN">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" indentationWidth="10" reuseIdentifier="chat" textLabel="cNs-Iq-7DX" imageView="4GS-NQ-WyY" style="IBUITableViewCellStyleDefault" id="GLg-tj-ghN">
                                 <rect key="frame" x="0.0" y="312" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="GLg-tj-ghN" id="jCa-1h-dzc">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Log Out" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="cNs-Iq-7DX">
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Chat" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="cNs-Iq-7DX">
                                             <rect key="frame" x="74" y="0.0" width="231" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" name="Futura-CondensedExtraBold" family="Futura" pointSize="25"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="LogoutIcon" id="4GS-NQ-WyY">
+                                        <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="chatIcon" id="4GS-NQ-WyY">
+                                            <rect key="frame" x="15" y="0.0" width="44" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </imageView>
+                                    </subviews>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="dA6-vY-3mm" kind="custom" identifier="chatSegue" customClass="SWRevealViewControllerSeguePushController" id="BIf-Ab-fIe"/>
+                                </connections>
+                            </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" indentationWidth="10" reuseIdentifier="logOut" textLabel="Ayi-Vr-OyR" imageView="PhK-eP-3GV" style="IBUITableViewCellStyleDefault" id="Kit-9l-Py3">
+                                <rect key="frame" x="0.0" y="356" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Kit-9l-Py3" id="OCb-xZ-jcK">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Log Out" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Ayi-Vr-OyR">
+                                            <rect key="frame" x="74" y="0.0" width="231" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" name="Futura-CondensedExtraBold" family="Futura" pointSize="25"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="LogoutIcon" id="PhK-eP-3GV">
                                             <rect key="frame" x="15" y="0.0" width="44" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </imageView>
@@ -398,7 +422,31 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RGy-Nz-3Vm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2366" y="-28"/>
+            <point key="canvasLocation" x="2044" y="-19"/>
+        </scene>
+        <!--Chat View Controller-->
+        <scene sceneID="cqx-pr-jjv">
+            <objects>
+                <viewController id="OkK-8c-oXu" customClass="ChatViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="E6O-ar-4BJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="a0Q-my-V62"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Lds-Fm-10W">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="XdO-U8-EG9">
+                        <barButtonItem key="leftBarButtonItem" image="menu.png" id="Kqc-DF-IDJ"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="sideBarButton" destination="Kqc-DF-IDJ" id="XG5-3N-rDO"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="92b-kP-dFc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2929" y="-20"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="2D3-eG-XQ4">
@@ -470,7 +518,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pe8-8m-hyo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1940" y="-28"/>
+            <point key="canvasLocation" x="1677" y="-19"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="yuH-vu-rbH">
@@ -490,11 +538,30 @@
             </objects>
             <point key="canvasLocation" x="622" y="-95"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="aOD-48-ftg">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="dA6-vY-3mm" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="ZAL-yP-rKs">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="OkK-8c-oXu" kind="relationship" relationship="rootViewController" id="feE-a7-0UQ"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vs0-Z9-4Do" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2397" y="-20"/>
+        </scene>
     </scenes>
     <resources>
         <image name="LogoutIcon" width="225" height="225"/>
         <image name="agenda" width="160" height="160"/>
         <image name="calanderIcon" width="225" height="225"/>
+        <image name="chatIcon" width="225" height="225"/>
         <image name="classesIcon" width="225" height="225"/>
         <image name="menu.png" width="510" height="170"/>
         <image name="profile" width="160" height="162"/>

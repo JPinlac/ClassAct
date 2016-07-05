@@ -120,7 +120,7 @@ didSignInForUser:(GIDGoogleUser *)user
                                   completion:^(FIRUser *user, NSError *error) {
                                       // ...
                                   }];
-        //        NSString *userId = user.userID;                  // For client-side use only!
+//                NSString *userId = user.userID;                  // For client-side use only!
         //        NSString *idToken = user.authentication.idToken; // Safe to send to the server
         //        NSString *fullName = user.profile.name;
         //        NSString *givenName = user.profile.givenName;

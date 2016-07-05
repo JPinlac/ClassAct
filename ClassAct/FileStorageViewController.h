@@ -9,7 +9,11 @@
 #import <UIKit/UIKit.h>
 
 @interface FileStorageViewController : UIViewController
+@property (weak, nonatomic) IBOutlet UITextField *UploadFileTextField;
 
+@property (weak, nonatomic) IBOutlet UITextField *DownloadFileTextField;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *sideBarButton;
+@property (weak, nonatomic) IBOutlet UITextView *UploadFileTextView;
+@property (weak, nonatomic) IBOutlet UITextView *DownloadFileTextView;
 
 @end

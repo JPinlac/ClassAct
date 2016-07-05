@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -83,12 +83,18 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jrk-In-oEZ">
-                                <rect key="frame" x="28" y="287" width="241" height="30"/>
+                                <rect key="frame" x="20" y="518" width="241" height="30"/>
                                 <state key="normal" title="Upload / Download Files"/>
                                 <connections>
                                     <segue destination="fmf-Iq-Q4B" kind="push" id="0Io-ld-37I"/>
                                 </connections>
                             </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Brain massages - ALL DAY" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="5f8-3M-o2K">
+                                <rect key="frame" x="21" y="128" width="279" height="181"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -96,6 +102,7 @@
                         <barButtonItem key="leftBarButtonItem" image="menu.png" id="cZP-bM-gcH"/>
                     </navigationItem>
                     <connections>
+                        <outlet property="output" destination="5f8-3M-o2K" id="p0B-WD-Ud9"/>
                         <outlet property="quoteLabel" destination="Puj-Eg-5EK" id="IYt-FM-meU"/>
                         <outlet property="sideBarButton" destination="cZP-bM-gcH" id="qhK-V2-hAj"/>
                     </connections>

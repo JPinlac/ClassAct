@@ -31,22 +31,12 @@
     _ref = [[FIRDatabase database] reference];
     
     _cservice = [(AppDelegate *)[[UIApplication sharedApplication] delegate] calendarService];
-    
-//    self.output = [[UITextView alloc] initWithFrame:self.view.bounds];
-//    self.output.editable = false;
-//    self.output.contentInset = UIEdgeInsetsMake(20.0, 0.0, 20.0, 0.0);
-//    self.output.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
-//    [self.view addSubview:self.output];
-    NSLog(@"View Loaded");
+
 }
 
 - (void)viewDidAppear:(BOOL)animated {
-//    [[GIDSignIn sharedInstance] signInSilently];
-    NSLog(@"Quesry");
-//    [self fetchEvents];
-//    [self performSelector:@selector(fetchEvents) withObject:nil afterDelay:2.0];
-    NSLog(@"Events fetched");
-    
+
+    [self performSelector:@selector(fetchEvents) withObject:nil afterDelay:1.0];
 }
 
 - (void)didReceiveMemoryWarning {

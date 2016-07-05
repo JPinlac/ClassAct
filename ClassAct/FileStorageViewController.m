@@ -10,6 +10,9 @@
 #import <Firebase.h>
 #import <UIKit/UIKit.h>
 
+FIRStorageReference *docDir;
+FIRStorageReference *imgDir;
+
 @interface FileStorageViewController ()
 
 @end
@@ -21,6 +24,8 @@
     // Do any additional setup after loading the view.
     FIRStorage *storage = [FIRStorage storage];
     FIRStorageReference *storageRef = [storage referenceForURL:@"gs://classact-22396.appspot.com"];
+    docDir = [storageRef child:@"documents"];
+    imgDir = [storageRef child:@"images"];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -32,7 +37,10 @@
     NSLog(@"********************************************************");
     NSLog(@"========================================================");
     NSLog(@"upload button pushed");
-    
+    FIRStorageReference *testDocRef = [docDir child:@"testDocument.txt"];
+    FIRStorageReference *testImgRef = [imgDir child:@"testImage.jpg"];
+    NSLog(@"test document reference is %@", testDocRef);
+    NSLog(@"test image reference is %@", testImgRef);
 }
 
 - (IBAction)DownloadButton:(id)sender {

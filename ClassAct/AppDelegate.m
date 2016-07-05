@@ -42,9 +42,13 @@
     [GIDSignIn sharedInstance].delegate = self;
     
     // Initialize the Google Calendar API service & load existing credentials from the keychain if available.
+    FIRUser *currentUser = [FIRAuth auth].currentUser;
     self.calendarService = [[GTLServiceCalendar alloc] init];
-    if([FIRAuth auth].currentUser == nil) {
+    if(currentUser == nil) {
         [self showLoginScreen:NO];
+    }
+    else {
+        [[GIDSignIn sharedInstance] signInSilently];
     }
     return YES;
 }
@@ -129,7 +133,7 @@ didSignInForUser:(GIDGoogleUser *)user
                                   completion:^(FIRUser *user, NSError *error) {
                                       // ...
                                   }];
-        [self setAuthorizerForSignIn: signIn user:user];
+        [self setAuthorizerForSignIn:user];
 
         [self dismissLoginView];
     } else {
@@ -137,12 +141,12 @@ didSignInForUser:(GIDGoogleUser *)user
     }
 }
 
-- (void)setAuthorizerForSignIn:(GIDSignIn *)signIn user:(GIDGoogleUser *)user {
+- (void)setAuthorizerForSignIn:(GIDGoogleUser *)user {
     GTMOAuth2Authentication *auth = [[GTMOAuth2Authentication alloc] init];
     
     NSArray *scopes = [NSArray arrayWithObjects:kGTLAuthScopeCalendar, nil];
     [auth setScope:[scopes componentsJoinedByString:@" "]];
-    [auth setClientID:signIn.clientID];
+    [auth setClientID:@"909045805467-uk2tbe28id528lvfdmfs3hv7nh0lq05h.apps.googleusercontent.com"];
     [auth setClientSecret:nil];
     [auth setUserEmail:user.profile.email];
     [auth setUserID:user.userID];
@@ -150,6 +154,7 @@ didSignInForUser:(GIDGoogleUser *)user
     [auth setRefreshToken:user.authentication.refreshToken];
     [auth setExpirationDate: user.authentication.accessTokenExpirationDate];
     self.calendarService.authorizer = auth;
+    NSLog(@"WHOA");
 }
 
 - (void)signIn:(GIDSignIn *)signIn

@@ -45,7 +45,7 @@
 
 // When the view appears, ensure that the Google Calendar API service is authorized, and perform API calls.
 - (void)viewDidAppear:(BOOL)animated {
-
+    
     [self fetchEvents];
 
 }

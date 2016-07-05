@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "GTLCalendar.h"
-#import "GTMOAuth2ViewControllerTouch.h"
+
 @interface CalenderViewController : UIViewController
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *sideBarButton;
 @property (nonatomic, strong) GTLServiceCalendar *cservice;

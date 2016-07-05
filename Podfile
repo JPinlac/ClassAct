@@ -15,5 +15,7 @@ target 'ClassAct' do
   pod 'Firebase/Storage'
   pod 'Firebase'
   pod 'JSQMessagesViewController'
+  pod 'GoogleAPIClient/Calendar'
+  pod 'GTMOAuth2'
 end
 

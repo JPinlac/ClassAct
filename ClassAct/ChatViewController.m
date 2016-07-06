@@ -34,21 +34,20 @@
 
 @implementation ChatViewController
 
-- (void)viewDidLoad
-{
+- (void)viewDidLoad {
     
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     [super viewDidLoad];
+    // creates the side bar menu
     SWRevealViewController *revealViewController = self.revealViewController;
-    if ( revealViewController )
-    {
-        [self.sideBarButton setTarget: self.revealViewController];
-        [self.sideBarButton setAction: @selector( revealToggle: )];
-        [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
-    }
+        if ( revealViewController ) {
+            [self.sideBarButton setTarget: self.revealViewController];
+            [self.sideBarButton setAction: @selector( revealToggle: )];
+            [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
+        }
 
-    self.title = @"iChat";
+    self.title = @"ClassChat";
     
     [self setupBubbles];
     
@@ -73,8 +72,6 @@
     [self observeIsTyping];
 }
 
-
-
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -83,7 +80,6 @@
 #pragma mark - Helpers
 
 -(void)setupBubbles {
-    
     JSQMessagesBubbleImageFactory * factory = [[JSQMessagesBubbleImageFactory alloc ]init];
     
     _outgoingBubbleImageView = [factory outgoingMessagesBubbleImageWithColor:[UIColor colorWithHue:130.0f / 360.0f
@@ -130,7 +126,6 @@
     
     [_typingQuery observeEventType:FIRDataEventTypeValue withBlock:  ^ (FIRDataSnapshot *snapshot) {
         
-        
         if ( snapshot.hasChildren) {
             if (snapshot.childrenCount == 1 && self.isTyping) {
                 //  You're the only typing, don't show the indicator
@@ -145,7 +140,6 @@
         
         [self scrollToBottomAnimated:YES];
     }];
-    
 }
 
 -(void)sendIsTyping {
@@ -156,14 +150,11 @@
     } else {
         [_isTypingRef setValue:@"0"];
     }
-    
 }
 
 #pragma mark - button actions
 
--(void)didPressSendButton:(UIButton *)button withMessageText:(NSString *)text senderId:(NSString *)senderId senderDisplayName:(NSString *)senderDisplayName date:(NSDate *)date
-{
-    
+-(void)didPressSendButton:(UIButton *)button withMessageText:(NSString *)text senderId:(NSString *)senderId senderDisplayName:(NSString *)senderDisplayName date:(NSDate *)date {
     NSDictionary *mdata = @{@"text": text, @"senderId":senderId};
     
     // Push data to Firebase Database

@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Log In View Controller-->
@@ -76,19 +77,25 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="quoteLabel" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Puj-Eg-5EK">
-                                <rect key="frame" x="20" y="455" width="280" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="quoteLabel" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Puj-Eg-5EK">
+                                <rect key="frame" x="20" y="325" width="280" height="185"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jrk-In-oEZ">
-                                <rect key="frame" x="28" y="287" width="241" height="30"/>
+                                <rect key="frame" x="20" y="518" width="241" height="30"/>
                                 <state key="normal" title="Upload / Download Files"/>
                                 <connections>
-                                    <segue destination="fmf-Iq-Q4B" kind="push" id="0Io-ld-37I"/>
+                                    <segue destination="7Eh-gI-D29" kind="push" id="0Io-ld-37I"/>
                                 </connections>
                             </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Brain massages - ALL DAY" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="5f8-3M-o2K">
+                                <rect key="frame" x="21" y="128" width="279" height="181"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -96,6 +103,7 @@
                         <barButtonItem key="leftBarButtonItem" image="menu.png" id="cZP-bM-gcH"/>
                     </navigationItem>
                     <connections>
+                        <outlet property="output" destination="5f8-3M-o2K" id="p0B-WD-Ud9"/>
                         <outlet property="quoteLabel" destination="Puj-Eg-5EK" id="IYt-FM-meU"/>
                         <outlet property="sideBarButton" destination="cZP-bM-gcH" id="qhK-V2-hAj"/>
                     </connections>
@@ -174,7 +182,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kwI-ef-GBC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1447" y="659"/>
+            <point key="canvasLocation" x="1979" y="659"/>
         </scene>
         <!--Rear View Menu Controller Table View Controller-->
         <scene sceneID="8bk-ai-jCg">
@@ -284,6 +292,9 @@
                                         </imageView>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="7Eh-gI-D29" kind="custom" identifier="fileSegue" customClass="SWRevealViewControllerSeguePushController" id="2ev-CJ-Yff"/>
+                                </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" indentationWidth="10" reuseIdentifier="agenda" textLabel="JGk-aE-9hZ" imageView="FB1-Zm-Hrg" style="IBUITableViewCellStyleDefault" id="Ncc-eY-JDb">
                                 <rect key="frame" x="0.0" y="268" width="320" height="44"/>
@@ -379,20 +390,46 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Person" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TC9-V0-Nao">
-                                <rect key="frame" x="118" y="248" width="76" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qHg-9T-YnZ">
+                                <rect key="frame" x="20" y="514" width="280" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jOv-Tz-9dA">
+                                <rect key="frame" x="20" y="259" width="280" height="182"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="182" id="uaU-az-4Ur"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Person" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TC9-V0-Nao">
+                                <rect key="frame" x="20" y="87" width="280" height="54"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="TC9-V0-Nao" firstAttribute="top" secondItem="l4L-u0-8Kx" secondAttribute="bottom" constant="23" id="JNW-vt-4Kc"/>
+                            <constraint firstItem="jOv-Tz-9dA" firstAttribute="centerX" secondItem="TC9-V0-Nao" secondAttribute="centerX" id="M4v-kH-q6z"/>
+                            <constraint firstItem="qHg-9T-YnZ" firstAttribute="top" secondItem="jOv-Tz-9dA" secondAttribute="bottom" constant="73" id="MJX-r5-ib1"/>
+                            <constraint firstItem="qHg-9T-YnZ" firstAttribute="leading" secondItem="qee-vy-Qcd" secondAttribute="leadingMargin" id="MOq-pn-67X"/>
+                            <constraint firstItem="jOv-Tz-9dA" firstAttribute="leading" secondItem="qHg-9T-YnZ" secondAttribute="leading" id="OR7-oW-RXT"/>
+                            <constraint firstItem="hcN-qP-DWz" firstAttribute="top" secondItem="qHg-9T-YnZ" secondAttribute="bottom" constant="20" id="TiK-aN-TzN"/>
+                            <constraint firstItem="qHg-9T-YnZ" firstAttribute="trailing" secondItem="qee-vy-Qcd" secondAttribute="trailingMargin" id="Zbh-XZ-zaJ"/>
+                            <constraint firstItem="jOv-Tz-9dA" firstAttribute="top" secondItem="qee-vy-Qcd" secondAttribute="top" constant="259" id="bCV-KZ-Nc5"/>
+                            <constraint firstItem="jOv-Tz-9dA" firstAttribute="trailing" secondItem="qHg-9T-YnZ" secondAttribute="trailing" id="nPy-Dg-6q9"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Profile" id="Obx-wK-z15">
                         <barButtonItem key="backBarButtonItem" title="nil" id="eJP-ha-hcI"/>
                         <barButtonItem key="leftBarButtonItem" image="menu.png" id="Zmt-qE-WYL"/>
                     </navigationItem>
                     <connections>
+                        <outlet property="emailLabel" destination="qHg-9T-YnZ" id="Ymz-Ph-npM"/>
+                        <outlet property="nameLabel" destination="TC9-V0-Nao" id="QXv-NP-3au"/>
+                        <outlet property="profileImage" destination="jOv-Tz-9dA" id="KeI-Qw-kpy"/>
                         <outlet property="sideBarButton" destination="Zmt-qE-WYL" id="raj-9B-sWe"/>
                     </connections>
                 </viewController>
@@ -424,7 +461,7 @@
             </objects>
             <point key="canvasLocation" x="2816" y="-661"/>
         </scene>
-        <!--Classes-->
+        <!--Science Class-->
         <scene sceneID="qsH-Ak-oS5">
             <objects>
                 <viewController id="qjM-bU-uQb" customClass="ClassesViewController" sceneMemberID="viewController">
@@ -436,20 +473,54 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ryu-Oc-3nf">
-                                <rect key="frame" x="130" y="176" width="42" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="800" misplaced="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="ryu-Oc-3nf">
+                                <rect key="frame" x="20" y="64" width="280" height="41"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="33"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="1000" misplaced="YES" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="7" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dVa-ai-kAl">
+                                <rect key="frame" x="20" y="113" width="280" height="372"/>
+                                <mutableString key="text">Class Participation Grade: This grade starts at 100% each marking period and will only decrease if a student hands in work late, talks out of turn during class, does not follow directions, is unprepared for class, or is off task. There will be opportunities for the student to earn back any lost points.  Content Grade: This grade is solely based on the content of the student’s work. The content grade will be decided using various methods such as tests, quizzes, homework, projects, science notebooks, and class handouts. 
+ The expectations for each student are much higher than any previous year. General classroom rules and expectations are always in play. Each student is expected to contribute to the progress of the classroom as a whole in a positive and productive manner. Students should arrive prepared for class both with the appropriate attitude and materials needed to succeed.</mutableString>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="16"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="If you are absent, you MUST make up the work you missed or you will receive a ZERO (0) for that assignment!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XWo-oN-ugp">
+                                <rect key="frame" x="20" y="488" width="280" height="67"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="280" id="0xt-YG-jsv"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="dVa-ai-kAl" firstAttribute="centerY" secondItem="hW8-pz-cFo" secondAttribute="centerY" id="2Mx-Gf-c1k"/>
+                            <constraint firstItem="ryu-Oc-3nf" firstAttribute="leading" secondItem="hW8-pz-cFo" secondAttribute="leadingMargin" id="79N-aV-3Er"/>
+                            <constraint firstItem="KIV-1G-CJZ" firstAttribute="top" secondItem="dVa-ai-kAl" secondAttribute="bottom" constant="83" id="7jD-os-lxp"/>
+                            <constraint firstItem="KIV-1G-CJZ" firstAttribute="top" secondItem="XWo-oN-ugp" secondAttribute="bottom" id="Awe-6Y-H8I"/>
+                            <constraint firstItem="ryu-Oc-3nf" firstAttribute="trailing" secondItem="hW8-pz-cFo" secondAttribute="trailingMargin" id="Il3-0g-47F"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="dVa-ai-kAl" secondAttribute="leading" id="R5l-44-lBn"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="dVa-ai-kAl" secondAttribute="trailing" id="Rj7-wf-1ln"/>
+                            <constraint firstItem="ryu-Oc-3nf" firstAttribute="top" secondItem="yOG-Ye-7V8" secondAttribute="bottom" id="Wvw-gy-N5X"/>
+                            <constraint firstItem="dVa-ai-kAl" firstAttribute="top" secondItem="ryu-Oc-3nf" secondAttribute="bottom" constant="8" id="iYy-XQ-4iw"/>
+                            <constraint firstItem="dVa-ai-kAl" firstAttribute="top" secondItem="ryu-Oc-3nf" secondAttribute="bottom" constant="8" id="o5Y-vV-0J7"/>
+                            <constraint firstItem="XWo-oN-ugp" firstAttribute="centerX" secondItem="hW8-pz-cFo" secondAttribute="centerX" id="r6J-BM-LwD"/>
+                            <constraint firstItem="dVa-ai-kAl" firstAttribute="centerX" secondItem="hW8-pz-cFo" secondAttribute="centerX" id="zg3-hA-xzj"/>
+                        </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Classes" id="Gaq-LR-LdE">
+                    <navigationItem key="navigationItem" title="Science Class" id="Gaq-LR-LdE">
                         <barButtonItem key="leftBarButtonItem" image="menu.png" id="rZf-K9-vI0"/>
                     </navigationItem>
                     <connections>
+                        <outlet property="classNameLabel" destination="ryu-Oc-3nf" id="Ido-4M-zJA"/>
+                        <outlet property="expectLabel" destination="dVa-ai-kAl" id="gtC-CB-U03"/>
                         <outlet property="sideBarButton" destination="rZf-K9-vI0" id="ysR-sC-FM7"/>
+                        <outlet property="toleranceLabel" destination="XWo-oN-ugp" id="tzh-5b-Yow"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RGy-Nz-3Vm" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -588,6 +659,25 @@
             </objects>
             <point key="canvasLocation" x="2397" y="-20"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="CJs-Ao-HAj">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="7Eh-gI-D29" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="sph-KS-P9Y"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="nsu-IV-OgR">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="fmf-Iq-Q4B" kind="relationship" relationship="rootViewController" id="muo-5s-MG3"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ihd-O6-nbE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1447" y="659"/>
+        </scene>
     </scenes>
     <resources>
         <image name="LogoutIcon" width="225" height="225"/>
@@ -600,6 +690,7 @@
         <image name="storage" width="204" height="204"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="2ev-CJ-Yff"/>
         <segue reference="bZB-IO-C26"/>
     </inferredMetricsTieBreakers>
 </document>

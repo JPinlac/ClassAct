@@ -12,4 +12,7 @@
 
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *sideBarButton;
 
+@property (weak, nonatomic) IBOutlet UILabel *classNameLabel;
+@property (weak, nonatomic) IBOutlet UILabel *expectLabel;
+@property (weak, nonatomic) IBOutlet UILabel *toleranceLabel;
 @end

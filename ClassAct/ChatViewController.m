@@ -30,6 +30,7 @@
 @property (nonatomic, strong) JSQMessagesBubbleImage * outgoingBubbleImageView;
 @property (nonatomic, strong) JSQMessagesBubbleImage * incomingBubbleImageView;
 @property (nonatomic) Boolean isTyping;
+@property (weak, nonatomic) IBOutlet JSQMessagesLabel *messageBubbleTopLabel;
 @end
 
 @implementation ChatViewController
@@ -59,6 +60,8 @@
     self.inputToolbar.contentView.leftBarButtonItem = nil ;
     
     _rootRef= [[FIRDatabase database] reference];
+    self.messageBubbleTopLabel.textColor = [UIColor purpleColor];
+    
 }
 
 -(void)viewDidAppear:(BOOL)animated {
@@ -87,8 +90,8 @@
                                                                                         brightness:0.84f
                                                                                              alpha:1.0f]];
     
-    _incomingBubbleImageView = [factory incomingMessagesBubbleImageWithColor:[UIColor colorWithHue:240.0f / 360.0f
-                                                                                        saturation:0.02f
+    _incomingBubbleImageView = [factory incomingMessagesBubbleImageWithColor:[UIColor colorWithHue:201.0f / 360.0f
+                                                                                        saturation:0.78f
                                                                                         brightness:0.92f
                                                                                              alpha:1.0f]];
     
@@ -215,5 +218,37 @@
 -(id<JSQMessageAvatarImageDataSource>)collectionView:(JSQMessagesCollectionView *)collectionView avatarImageDataForItemAtIndexPath:(NSIndexPath *)indexPath {
     return nil;
 }
+
+- (CGFloat)collectionView:(JSQMessagesCollectionView *)collectionView
+                   layout:(JSQMessagesCollectionViewFlowLayout *)collectionViewLayout heightForMessageBubbleTopLabelAtIndexPath:(NSIndexPath *)indexPath
+{
+    
+    return 18.0f;
+}
+
+- (NSAttributedString *)collectionView:(JSQMessagesCollectionView *)collectionView attributedTextForMessageBubbleTopLabelAtIndexPath:(NSIndexPath *)indexPath
+{
+    JSQMessage *message = [self.messages objectAtIndex:indexPath.item];
+    
+    /**
+     *  iOS7-style sender name labels
+     */
+    if ([message.senderId isEqualToString:self.senderId]) {
+        return nil;
+    }
+    
+    if (indexPath.item - 1 > 0) {
+        JSQMessage *previousMessage = [self.messages objectAtIndex:indexPath.item - 1];
+        if ([[previousMessage senderId] isEqualToString:message.senderId]) {
+            return nil;
+        }
+    }
+    
+    /**
+     *  Don't specify attributes to use the defaults.
+     */
+    return [[NSAttributedString alloc] initWithString:message.senderId];
+}
+
 
 @end

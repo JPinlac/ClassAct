@@ -33,6 +33,7 @@
     _cservice = [(AppDelegate *)[[UIApplication sharedApplication] delegate] calendarService];
     
     [self findMotivation];
+    [self blinkTextInLabel:_agendaLabel toColor:[UIColor orangeColor]];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -118,4 +119,15 @@
 }
 */
 
+- (void)blinkTextInLabel:(UILabel *)label toColor:(UIColor *)color
+{
+    [UIView transitionWithView:label duration:0 options:UIViewAnimationOptionTransitionCrossDissolve animations:^{
+        // set to background color (change the color if necessary)
+        label.textColor = [UIColor whiteColor];
+    } completion:^(BOOL finished) {
+        [UIView transitionWithView:label duration:6.0f options:UIViewAnimationOptionTransitionCrossDissolve animations:^{
+            label.textColor = color;
+        } completion:nil];
+    }];
+}
 @end

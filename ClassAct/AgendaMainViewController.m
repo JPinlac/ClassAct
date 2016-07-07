@@ -34,6 +34,8 @@
     
     [self findMotivation];
     [self blinkTextInLabel:_agendaLabel toColor:[UIColor orangeColor]];
+    [self changeBorders];
+    [self changeBackground];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -129,5 +131,13 @@
             label.textColor = color;
         } completion:nil];
     }];
+}
+-(void)changeBorders{
+    _quoteLabel.layer.borderWidth = 10.0f;
+    _quoteLabel.layer.borderColor = [[UIColor colorWithPatternImage:[UIImage imageNamed:@"dots.png"]] CGColor];
+}
+
+-(void)changeBackground {
+    _agendaBackgroundImage.alpha = 0.2f;
 }
 @end

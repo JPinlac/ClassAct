@@ -13,6 +13,7 @@
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *sideBarButton;
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *emailLabel;
+@property (weak, nonatomic) IBOutlet UIImageView *profileBackgroundImage;
 
 @property (weak, nonatomic) IBOutlet UIImageView *profileImage;
 @end

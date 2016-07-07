@@ -31,6 +31,7 @@
     
     self.expectLabel.adjustsFontSizeToFitWidth = YES;
 //    self.expectLabel.backgroundColor = [UIColor blueColor];
+    [self changeBackground];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -52,7 +53,7 @@
 {
     [UIView transitionWithView:label duration:0 options:UIViewAnimationOptionTransitionCrossDissolve animations:^{
         // set to background color (change the color if necessary)
-        label.textColor = [UIColor whiteColor];
+        label.textColor = [UIColor clearColor];
     } completion:^(BOOL finished) {
         [UIView transitionWithView:label duration:6.0f options:UIViewAnimationOptionTransitionCrossDissolve animations:^{
             label.textColor = color;
@@ -60,4 +61,7 @@
     }];
 }
 
+-(void)changeBackground {
+    _classesBackgroundImage.alpha = 0.3f;
+}
 @end

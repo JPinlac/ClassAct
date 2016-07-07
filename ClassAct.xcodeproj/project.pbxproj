@@ -13,7 +13,6 @@
 		43920DE91D22CFE500C6FE12 /* AgendaMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43920DE81D22CFE500C6FE12 /* AgendaMainViewController.m */; };
 		43920DF01D22ECBE00C6FE12 /* LogInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43920DEF1D22ECBE00C6FE12 /* LogInViewController.m */; };
 		43920DF31D230D7C00C6FE12 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43920DF21D230D7C00C6FE12 /* SWRevealViewController.m */; };
-		43AF8C6A1D2EC1900049D0E3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 43AF8C691D2EC1900049D0E3 /* GoogleService-Info.plist */; };
 		43BFD1401D258CFF00F58EBF /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43BFD13F1D258CFF00F58EBF /* ProfileViewController.m */; };
 		43BFD1431D258D4300F58EBF /* CalenderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43BFD1421D258D4300F58EBF /* CalenderViewController.m */; };
 		43BFD1491D258E0F00F58EBF /* ClassesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43BFD1481D258E0F00F58EBF /* ClassesViewController.m */; };
@@ -22,6 +21,7 @@
 		43C56D8B1D216B6200C56ECC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 43C56D8A1D216B6200C56ECC /* Assets.xcassets */; };
 		43C56D8E1D216B6200C56ECC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 43C56D8C1D216B6200C56ECC /* LaunchScreen.storyboard */; };
 		43D0EB3F1D2A04C1001E6A5E /* ChatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43D0EB3E1D2A04C1001E6A5E /* ChatViewController.m */; };
+		870789851D2D7BE400C73C75 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 870789841D2D7BE400C73C75 /* GoogleService-Info.plist */; };
 		87301EDF1D244A00006F63AF /* FileStorageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 87301EDE1D244A00006F63AF /* FileStorageViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -35,7 +35,6 @@
 		43920DEF1D22ECBE00C6FE12 /* LogInViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LogInViewController.m; sourceTree = "<group>"; };
 		43920DF11D230D7400C6FE12 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
 		43920DF21D230D7C00C6FE12 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
-		43AF8C691D2EC1900049D0E3 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		43BFD13E1D258CFF00F58EBF /* ProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileViewController.h; sourceTree = "<group>"; };
 		43BFD13F1D258CFF00F58EBF /* ProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileViewController.m; sourceTree = "<group>"; };
 		43BFD1411D258D4300F58EBF /* CalenderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalenderViewController.h; sourceTree = "<group>"; };
@@ -52,6 +51,7 @@
 		43D0EB3D1D2A04C1001E6A5E /* ChatViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatViewController.h; sourceTree = "<group>"; };
 		43D0EB3E1D2A04C1001E6A5E /* ChatViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatViewController.m; sourceTree = "<group>"; };
 		4D50ED509BC56FCEBB8F9928 /* Pods-ClassAct.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ClassAct.release.xcconfig"; path = "Pods/Target Support Files/Pods-ClassAct/Pods-ClassAct.release.xcconfig"; sourceTree = "<group>"; };
+		870789841D2D7BE400C73C75 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		87301EDD1D244A00006F63AF /* FileStorageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FileStorageViewController.h; sourceTree = "<group>"; };
 		87301EDE1D244A00006F63AF /* FileStorageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FileStorageViewController.m; sourceTree = "<group>"; };
 		D5D7333FA65AE41E5F4457FA /* libPods-ClassAct.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ClassAct.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -122,7 +122,7 @@
 				87301EDE1D244A00006F63AF /* FileStorageViewController.m */,
 				43C56D8A1D216B6200C56ECC /* Assets.xcassets */,
 				43C56D8C1D216B6200C56ECC /* LaunchScreen.storyboard */,
-				43AF8C691D2EC1900049D0E3 /* GoogleService-Info.plist */,
+				870789841D2D7BE400C73C75 /* GoogleService-Info.plist */,
 				43C56D8F1D216B6200C56ECC /* Info.plist */,
 				43C56D7E1D216B6200C56ECC /* Supporting Files */,
 			);
@@ -153,6 +153,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 43C56D921D216B6200C56ECC /* Build configuration list for PBXNativeTarget "ClassAct" */;
 			buildPhases = (
+				D21DE602B043C2B21EA23DE6 /* 📦 Check Pods Manifest.lock */,
 				928635A2477C213B4545596E /* [CP] Check Pods Manifest.lock */,
 				C88C385805C8FEF237E6F1DC /* [CP] Check Pods Manifest.lock */,
 				2851110C3412B2FD2C0ED8BA /* [CP] Check Pods Manifest.lock */,
@@ -215,7 +216,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				43C56D8E1D216B6200C56ECC /* LaunchScreen.storyboard in Resources */,
-				43AF8C6A1D2EC1900049D0E3 /* GoogleService-Info.plist in Resources */,
+				870789851D2D7BE400C73C75 /* GoogleService-Info.plist in Resources */,
 				43C56D8B1D216B6200C56ECC /* Assets.xcassets in Resources */,
 				438E782A1D26CE1000191F71 /* Main.storyboard in Resources */,
 			);
@@ -337,6 +338,21 @@
 			inputPaths = (
 			);
 			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		D21DE602B043C2B21EA23DE6 /* 📦 Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;

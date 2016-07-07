@@ -15,4 +15,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *classNameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *expectLabel;
 @property (weak, nonatomic) IBOutlet UILabel *toleranceLabel;
+@property (weak, nonatomic) IBOutlet UIImageView *classesBackgroundImage;
+
 @end

@@ -84,7 +84,7 @@
         if(!_eventsByDate[key]){
             _eventsByDate[key] = [NSMutableArray new];
         }
-        NSLog(<#NSString * _Nonnull format, ...#>)
+        NSLog(@"%@", event);
         [_eventsByDate[key] addObject:date];
         
     }

@@ -14,6 +14,7 @@
 		43920DF01D22ECBE00C6FE12 /* LogInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43920DEF1D22ECBE00C6FE12 /* LogInViewController.m */; };
 		43920DF31D230D7C00C6FE12 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43920DF21D230D7C00C6FE12 /* SWRevealViewController.m */; };
 		43AF8C6C1D2ED0130049D0E3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 43AF8C6B1D2ED0130049D0E3 /* GoogleService-Info.plist */; };
+		43AF8C741D2EE3C30049D0E3 /* Calendar.m in Sources */ = {isa = PBXBuildFile; fileRef = 43AF8C731D2EE3C30049D0E3 /* Calendar.m */; };
 		43BFD1401D258CFF00F58EBF /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43BFD13F1D258CFF00F58EBF /* ProfileViewController.m */; };
 		43BFD1431D258D4300F58EBF /* CalenderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43BFD1421D258D4300F58EBF /* CalenderViewController.m */; };
 		43BFD1491D258E0F00F58EBF /* ClassesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43BFD1481D258E0F00F58EBF /* ClassesViewController.m */; };
@@ -36,6 +37,8 @@
 		43920DF11D230D7400C6FE12 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
 		43920DF21D230D7C00C6FE12 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
 		43AF8C6B1D2ED0130049D0E3 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		43AF8C721D2EE3C30049D0E3 /* Calendar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Calendar.h; path = ../Calendar.h; sourceTree = "<group>"; };
+		43AF8C731D2EE3C30049D0E3 /* Calendar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Calendar.m; path = ../Calendar.m; sourceTree = "<group>"; };
 		43BFD13E1D258CFF00F58EBF /* ProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileViewController.h; sourceTree = "<group>"; };
 		43BFD13F1D258CFF00F58EBF /* ProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileViewController.m; sourceTree = "<group>"; };
 		43BFD1411D258D4300F58EBF /* CalenderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalenderViewController.h; sourceTree = "<group>"; };
@@ -108,6 +111,8 @@
 		43AF8C711D2EE2DF0049D0E3 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				43AF8C721D2EE3C30049D0E3 /* Calendar.h */,
+				43AF8C731D2EE3C30049D0E3 /* Calendar.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -416,6 +421,7 @@
 				43920DF01D22ECBE00C6FE12 /* LogInViewController.m in Sources */,
 				43BFD1431D258D4300F58EBF /* CalenderViewController.m in Sources */,
 				43D0EB3F1D2A04C1001E6A5E /* ChatViewController.m in Sources */,
+				43AF8C741D2EE3C30049D0E3 /* Calendar.m in Sources */,
 				43C56D831D216B6200C56ECC /* AppDelegate.m in Sources */,
 				43BFD1401D258CFF00F58EBF /* ProfileViewController.m in Sources */,
 				87301EDF1D244A00006F63AF /* FileStorageViewController.m in Sources */,

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -18,15 +18,19 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4kQ-J8-h9J" customClass="GIDSignInButton">
-                                <rect key="frame" x="40" y="475" width="240" height="45"/>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4kQ-J8-h9J" customClass="GIDSignInButton">
+                                <rect key="frame" x="40" y="268" width="240" height="45"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KLW-qM-R2J">
+                                <rect key="frame" x="26" y="496" width="268" height="30"/>
+                                <state key="normal" title="Skip Logon (for testing only)"/>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="modal" id="les-9h-Mg1"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="4kQ-J8-h9J" firstAttribute="centerX" secondItem="N3H-x5-5jM" secondAttribute="centerX" id="NPX-Kp-r0H"/>
-                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="H12-OZ-8ci" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -69,22 +73,29 @@
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Today's Agenda" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hQu-AA-tNZ">
                                 <rect key="frame" x="20" y="80" width="280" height="40"/>
-                                <fontDescription key="fontDescription" name="Papyrus" family="Papyrus" pointSize="32"/>
+                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="quoteLabel" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Puj-Eg-5EK">
+                                <rect key="frame" x="20" y="325" width="280" height="185"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jrk-In-oEZ">
+                                <rect key="frame" x="20" y="518" width="241" height="30"/>
+                                <state key="normal" title="Upload / Download Files"/>
+                                <connections>
+                                    <segue destination="7Eh-gI-D29" kind="push" id="0Io-ld-37I"/>
+                                </connections>
+                            </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Brain massages - ALL DAY" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="5f8-3M-o2K">
                                 <rect key="frame" x="21" y="128" width="279" height="181"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="quoteLabel" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Puj-Eg-5EK">
-                                <rect key="frame" x="21" y="375" width="280" height="185"/>
-                                <fontDescription key="fontDescription" name="Optima-BoldItalic" family="Optima" pointSize="19"/>
-                                <color key="textColor" red="0.16034071147441864" green="0.48340749740600586" blue="0.88220226764678955" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -92,7 +103,6 @@
                         <barButtonItem key="leftBarButtonItem" image="menu.png" id="cZP-bM-gcH"/>
                     </navigationItem>
                     <connections>
-                        <outlet property="agendaLabel" destination="hQu-AA-tNZ" id="yWm-wt-Hxh"/>
                         <outlet property="output" destination="5f8-3M-o2K" id="p0B-WD-Ud9"/>
                         <outlet property="quoteLabel" destination="Puj-Eg-5EK" id="IYt-FM-meU"/>
                         <outlet property="sideBarButton" destination="cZP-bM-gcH" id="qhK-V2-hAj"/>
@@ -221,7 +231,7 @@
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Class Rules" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Jw0-dk-ljO">
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Classes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Jw0-dk-ljO">
                                             <rect key="frame" x="74" y="0.0" width="231" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" name="Futura-CondensedExtraBold" family="Futura" pointSize="25"/>
@@ -471,21 +481,18 @@
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="1000" misplaced="YES" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="7" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dVa-ai-kAl">
                                 <rect key="frame" x="20" y="113" width="280" height="372"/>
-                                <string key="text">Class Participation Grade: This grade starts at 100% each marking period and will only decrease if a student hands in work late, talks out of turn during class, does not follow directions, is unprepared for class, or is off task. There will be opportunities for the student to earn back any lost points.
-
-Content Grade: This grade is solely based on the content of the student’s work. The content grade will be decided using various methods such as tests, quizzes, homework, projects, science notebooks, and class handouts. 
-
-The expectations for each student are much higher than any previous year. General classroom rules and expectations are always in play. Each student is expected to contribute to the progress of the classroom as a whole in a positive and productive manner. Students should arrive prepared for class both with the appropriate attitude and materials needed to succeed.</string>
+                                <mutableString key="text">Class Participation Grade: This grade starts at 100% each marking period and will only decrease if a student hands in work late, talks out of turn during class, does not follow directions, is unprepared for class, or is off task. There will be opportunities for the student to earn back any lost points.  Content Grade: This grade is solely based on the content of the student’s work. The content grade will be decided using various methods such as tests, quizzes, homework, projects, science notebooks, and class handouts. 
+ The expectations for each student are much higher than any previous year. General classroom rules and expectations are always in play. Each student is expected to contribute to the progress of the classroom as a whole in a positive and productive manner. Students should arrive prepared for class both with the appropriate attitude and materials needed to succeed.</mutableString>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="16"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="If you are absent, you MUST make up the work you missed or receive a ZERO (0) for that assignment!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XWo-oN-ugp">
-                                <rect key="frame" x="20" y="477" width="280" height="78"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="If you are absent, you MUST make up the work you missed or you will receive a ZERO (0) for that assignment!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XWo-oN-ugp">
+                                <rect key="frame" x="20" y="488" width="280" height="67"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="280" id="0xt-YG-jsv"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -683,6 +690,7 @@ The expectations for each student are much higher than any previous year. Genera
         <image name="storage" width="204" height="204"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="2ev-CJ-Yff"/>
         <segue reference="bZB-IO-C26"/>
     </inferredMetricsTieBreakers>
 </document>

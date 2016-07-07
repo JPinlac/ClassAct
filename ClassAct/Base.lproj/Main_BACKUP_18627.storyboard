@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<<<<<<< HEAD
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="BYZ-38-t0r">
+=======
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="BYZ-38-t0r">
+>>>>>>> master
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -471,11 +475,8 @@
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="1000" misplaced="YES" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="7" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dVa-ai-kAl">
                                 <rect key="frame" x="20" y="113" width="280" height="372"/>
-                                <string key="text">Class Participation Grade: This grade starts at 100% each marking period and will only decrease if a student hands in work late, talks out of turn during class, does not follow directions, is unprepared for class, or is off task. There will be opportunities for the student to earn back any lost points.
-
-Content Grade: This grade is solely based on the content of the student’s work. The content grade will be decided using various methods such as tests, quizzes, homework, projects, science notebooks, and class handouts. 
-
-The expectations for each student are much higher than any previous year. General classroom rules and expectations are always in play. Each student is expected to contribute to the progress of the classroom as a whole in a positive and productive manner. Students should arrive prepared for class both with the appropriate attitude and materials needed to succeed.</string>
+                                <string key="text">Class Participation Grade: This grade starts at 100% each marking period and will only decrease if a student hands in work late, talks out of turn during class, does not follow directions, is unprepared for class, or is off task. There will be opportunities for the student to earn back any lost points.  Content Grade: This grade is solely based on the content of the student’s work. The content grade will be decided using various methods such as tests, quizzes, homework, projects, science notebooks, and class handouts. 
+ The expectations for each student are much higher than any previous year. General classroom rules and expectations are always in play. Each student is expected to contribute to the progress of the classroom as a whole in a positive and productive manner. Students should arrive prepared for class both with the appropriate attitude and materials needed to succeed.</string>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="16"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>

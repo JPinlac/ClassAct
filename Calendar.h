@@ -9,5 +9,6 @@
 #import <Foundation/Foundation.h>
 
 @interface Calendar : NSObject
-@property NSDate *date;
+@property NSMutableDictionary *events;
++ (instancetype)sharedInstance;
 @end

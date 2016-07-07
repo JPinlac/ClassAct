@@ -9,9 +9,10 @@
 #import "CalenderViewController.h"
 #import "SWRevealViewController.h"
 #import "AppDelegate.h"
-
+#import "Calendar.h"
+#import "Event.h"
 @interface CalenderViewController (){
-    NSMutableDictionary *_eventsByDate;
+//    NSMutableDictionary *_eventsByDate;
     
     NSDate *_dateSelected;
 }
@@ -33,7 +34,7 @@
     }
     _cservice = [(AppDelegate *)[[UIApplication sharedApplication] delegate] calendarService];
     
-    [self fetchEvents];
+//    [self fetchEvents];
     
     _calendarManager = [JTCalendarManager new];
     _calendarManager.delegate = self;
@@ -75,19 +76,19 @@
 - (void)printEvents:(GTLServiceTicket *)ticket
              finishedWithObject:(GTLCalendarEvents *)events
                           error:(NSError *)error {
-    _eventsByDate = [NSMutableDictionary new];
-    
-    for(GTLCalendarEvent *event in events){
-        NSDate *date = event.start.dateTime.date;
-        NSString *key = [[self dateFormatter] stringFromDate:date];
-
-        if(!_eventsByDate[key]){
-            _eventsByDate[key] = [NSMutableArray new];
-        }
-        NSLog(@"%@", event);
-        [_eventsByDate[key] addObject:date];
-        
-    }
+//    _eventsByDate = [NSMutableDictionary new];
+//    
+//    for(GTLCalendarEvent *event in events){
+//        NSDate *date = event.start.dateTime.date;
+//        NSString *key = [[self dateFormatter] stringFromDate:date];
+//
+//        if(!_eventsByDate[key]){
+//            _eventsByDate[key] = [NSMutableArray new];
+//        }
+//        NSLog(@"%@", event);
+//        [_eventsByDate[key] addObject:date];
+//        
+//    }
 }
 
 #pragma mark - CalendarManager delegate
@@ -186,35 +187,14 @@
 - (BOOL)haveEventForDay:(NSDate *)date
 {
     NSString *key = [[self dateFormatter] stringFromDate:date];
-    
-    if(_eventsByDate[key] && [_eventsByDate[key] count] > 0){
+    NSLog(@"%@", key);
+    if([Calendar sharedInstance].events[key]){
         return YES;
     }
     
     return NO;
     
 }
-
-- (void)createRandomEvents
-{
-    _eventsByDate = [NSMutableDictionary new];
-    
-    for(int i = 0; i < 30; ++i){
-        // Generate 30 random dates between now and 60 days later
-        NSDate *randomDate = [NSDate dateWithTimeInterval:(rand() % (3600 * 24 * 60)) sinceDate:[NSDate date]];
-        
-        // Use the date as key for eventsByDate
-        NSString *key = [[self dateFormatter] stringFromDate:randomDate];
-        
-        if(!_eventsByDate[key]){
-            _eventsByDate[key] = [NSMutableArray new];
-        }
-        
-        [_eventsByDate[key] addObject:randomDate];
-    }
-}
-
-
 
 /*
 #pragma mark - Navigation

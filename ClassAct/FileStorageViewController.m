@@ -11,7 +11,11 @@
 #import <Firebase.h>
 #import <UIKit/UIKit.h>
 
-FIRStorageReference *storageFileDir;
+FIRStorageReference *firebaseStorageArea;
+FIRStorageReference *firebaseStorageDirectory;
+NSURL *defaultLocalDocumentsDirectoryURL;
+NSString *localDirectory;
+
 
 @interface FileStorageViewController ()
 
@@ -29,9 +33,41 @@ FIRStorageReference *storageFileDir;
         [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
     }
     // Do any additional setup after loading the view.
-    FIRStorage *storage = [FIRStorage storage];
-    FIRStorageReference *storageRef = [storage referenceForURL:@"gs://classact-22396.appspot.com"];
-    storageFileDir = [storageRef child:@"files"];
+    
+    //Create reference to firebase storage repository
+    FIRStorageReference *firebaseStorageArea = [[FIRStorage storage] referenceForURL:@"gs://classact-22396.appspot.com"];
+    firebaseStorageDirectory = [firebaseStorageArea child:@"files"];
+    
+    //Create references to default local directory structure
+    defaultLocalDocumentsDirectoryURL = [[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] lastObject];
+    localDirectory = [[defaultLocalDocumentsDirectoryURL path] stringByAppendingString:@"/"];
+    NSLog(@"local directory: %@", localDirectory);
+    
+    //display local directory contents eligible for uploading
+    NSFileManager *filemgr;
+    NSArray *filelist;
+    int count;
+    int i;
+    
+    filemgr =[NSFileManager defaultManager];
+    filelist = [filemgr contentsOfDirectoryAtPath:localDirectory error:NULL];
+    count = [filelist count];
+    
+    NSString *fileListBuffer = @"";
+
+    for (i = 0; i < count; i++)
+    {
+        fileListBuffer = [fileListBuffer stringByAppendingString:filelist[i]];
+        fileListBuffer = [fileListBuffer stringByAppendingString:@"\n"];
+        //NSLog(@"%@", filelist[i]);
+    };
+    NSLog(@"fileListBuffer is %@", fileListBuffer);
+    _UploadFileTextView.text = fileListBuffer;
+    
+    
+    
+    
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -41,61 +77,29 @@ FIRStorageReference *storageFileDir;
 
 - (IBAction)UploadButton:(id)sender {
     NSLog(@"********************************************************");
-    NSLog(@"========================================================");
     NSLog(@"upload button pushed");
     
-    NSURL *documentsDirectoryURL = [[[NSFileManager defaultManager]
-                                     URLsForDirectory:NSDocumentDirectory
-                                     inDomains:NSUserDomainMask]
-                                    lastObject];
-    //NSString *localSourceForUploadFileStringDir = @"/Users/jeremylilje/DetroitLabsProjects/week07/ClassAct/ClassAct/";
-    NSString *localSourceForUploadFileStringDir = [documentsDirectoryURL absoluteString];
-    NSString *localSourceForUploadFileStringFile = _UploadFileTextField.text;
-    
-    NSString *localSourceForUploadFileString = [localSourceForUploadFileStringDir stringByAppendingString:localSourceForUploadFileStringFile];
-    NSURL *localSourceForUploadFileRef = [NSURL fileURLWithPath:localSourceForUploadFileString];
-    NSLog(@"localSourceForUploadFileRef is %@", localSourceForUploadFileRef);
-    
-    NSString *remoteTargetForUploadFileString = _UploadFileTextField.text;
-    FIRStorageReference *remoteTargetForUploadFileRef = [storageFileDir child:remoteTargetForUploadFileString];
-    NSLog(@"remoteTargetForUploadFileRef is %@", remoteTargetForUploadFileRef);
-
-    FIRStorageUploadTask *uploadTask = [remoteTargetForUploadFileRef putFile:localSourceForUploadFileRef];
+    FIRStorageUploadTask *uploadTask = [[[firebaseStorageArea child:@"files"] child:[@"/" stringByAppendingString:_UploadFileTextField.text]] putFile:[NSURL fileURLWithPath:[[defaultLocalDocumentsDirectoryURL path] stringByAppendingString:[@"/" stringByAppendingString:_UploadFileTextField.text]]]];
 }
 
 - (IBAction)DownloadButton:(id)sender {
     NSLog(@"********************************************************");
-    NSLog(@"========================================================");
     NSLog(@"download button pushed");
     
-    NSString *remoteSourceForDownloadFileString = _DownloadFileTextField.text;
-    FIRStorageReference *remoteSourceForDownloadFileRef = [storageFileDir child:remoteSourceForDownloadFileString];
-    NSLog(@"remoteSourceForDownloadFileRef is %@", remoteSourceForDownloadFileRef);
-    
-    NSURL *documentsDirectoryURL = [[[NSFileManager defaultManager]
-                                     URLsForDirectory:NSDocumentDirectory
-                                     inDomains:NSUserDomainMask]
-                                    lastObject];
-    //NSString *localSourceForUploadFileStringDir = @"/Users/jeremylilje/DetroitLabsProjects/week07/ClassAct/ClassAct/";
-    NSString *localTargetForDownloadFileStringDir = [documentsDirectoryURL absoluteString];
-    
-   // NSString *localTargetForDownloadFileStringDir = @"/Users/jeremylilje/DetroitLabsProjects/week07/ClassAct/ClassAct/";
-    NSString *localTargetForDownloadFileStringFile = _DownloadFileTextField.text;
-    NSString *localTargetForDownloadFileString = [localTargetForDownloadFileStringDir stringByAppendingString:localTargetForDownloadFileStringFile];
-    NSURL *localTargetForDownloadFileRef = [NSURL fileURLWithPath:localTargetForDownloadFileString];
-    NSLog(@"localTargetForDownloadFileRef is %@", localTargetForDownloadFileRef);
-    
-    FIRStorageDownloadTask *downloadTask = [remoteSourceForDownloadFileRef writeToFile:localTargetForDownloadFileRef completion:^(NSURL * _Nullable URL, NSError * _Nullable error)
+    FIRStorageDownloadTask *downloadTask = [[firebaseStorageDirectory child:_DownloadFileTextField.text] writeToFile:[NSURL fileURLWithPath:[localDirectory stringByAppendingString:_DownloadFileTextField.text]] completion:^(NSURL * _Nullable URL, NSError * _Nullable error)
     {
         if (error != nil)
         {
             NSLog(@"an error occurred %@", error);// Uh-oh, an error occurred!
         } else
         {
-            NSLog(@"file downloaded successfully!");// Local file URL for "images/island.jpg" is returned
+            NSLog(@" ");
+            NSLog(@"file downloaded successfully to %@%@", localDirectory, _DownloadFileTextField.text);// Local file URL for "images/island.jpg" is returned
+            NSLog(@" ");
         }
     }];
 }
+
 
 /*
 #pragma mark - Navigation

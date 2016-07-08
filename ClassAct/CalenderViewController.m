@@ -54,6 +54,8 @@
     [_calendarManager setDate:[NSDate date]];
     
     _calendarMenuView.scrollView.scrollEnabled = NO; // Scroll not supported with JTVerticalCalendarView
+    
+    _calenderBackgrounf.alpha = 0.4f;
 }
 
 - (void)didReceiveMemoryWarning {

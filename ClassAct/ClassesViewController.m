@@ -26,11 +26,9 @@
     }
     
     [self blinkTextInLabel:_classNameLabel toColor:[UIColor purpleColor]];
-//    [self blinkTextInLabel:_expectLabel toColor:[UIColor blackColor]];
     [self blinkTextInLabel:_toleranceLabel toColor:[UIColor redColor]];
     
     self.expectLabel.adjustsFontSizeToFitWidth = YES;
-//    self.expectLabel.backgroundColor = [UIColor blueColor];
     [self changeBackground];
 }
 
@@ -38,16 +36,6 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 - (void)blinkTextInLabel:(UILabel *)label toColor:(UIColor *)color
 {
@@ -62,6 +50,6 @@
 }
 
 -(void)changeBackground {
-    _classesBackgroundImage.alpha = 0.3f;
+    _classesBackgroundImage.alpha = 0.2f;
 }
 @end

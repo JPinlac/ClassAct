@@ -16,6 +16,7 @@
 @property (nonatomic, strong) IBOutlet UITextView *output;
 @property (weak, nonatomic) IBOutlet UILabel *quoteLabel;
 @property (weak, nonatomic) IBOutlet UILabel *agendaLabel;
+@property (weak, nonatomic) IBOutlet UIImageView *agendaBackgroundImage;
 
 //@property (weak, nonatomic) IBOutlet UIButton *fileStorageButton;
 

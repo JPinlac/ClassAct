@@ -17,5 +17,5 @@ target 'ClassAct' do
   pod 'JSQMessagesViewController'
   pod 'GoogleAPIClient/Calendar'
   pod 'GTMOAuth2'
+  pod 'JTCalendar', '~> 2.1'
 end
-

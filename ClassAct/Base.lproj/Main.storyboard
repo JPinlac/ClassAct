@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -67,6 +67,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="periodic" translatesAutoresizingMaskIntoConstraints="NO" id="bBL-L1-d6o">
+                                <rect key="frame" x="0.0" y="13" width="320" height="555"/>
+                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Today's Agenda" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hQu-AA-tNZ">
                                 <rect key="frame" x="20" y="80" width="280" height="40"/>
                                 <fontDescription key="fontDescription" name="Papyrus" family="Papyrus" pointSize="32"/>
@@ -89,9 +92,10 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="Agenda" id="W9Z-ef-noM">
-                        <barButtonItem key="leftBarButtonItem" image="menu.png" id="cZP-bM-gcH"/>
+                        <barButtonItem key="leftBarButtonItem" image="menu" id="cZP-bM-gcH"/>
                     </navigationItem>
                     <connections>
+                        <outlet property="agendaBackgroundImage" destination="bBL-L1-d6o" id="Ojc-wl-zTn"/>
                         <outlet property="agendaLabel" destination="hQu-AA-tNZ" id="yWm-wt-Hxh"/>
                         <outlet property="output" destination="5f8-3M-o2K" id="p0B-WD-Ud9"/>
                         <outlet property="quoteLabel" destination="Puj-Eg-5EK" id="IYt-FM-meU"/>
@@ -160,7 +164,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="lZZ-Na-AzB">
-                        <barButtonItem key="leftBarButtonItem" image="menu.png" id="KbH-X2-GpQ"/>
+                        <barButtonItem key="leftBarButtonItem" image="menu" id="KbH-X2-GpQ"/>
                     </navigationItem>
                     <connections>
                         <outlet property="DownloadFileTextField" destination="6oZ-2M-SKn" id="oe4-Ym-uo9"/>
@@ -380,45 +384,55 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="science" translatesAutoresizingMaskIntoConstraints="NO" id="zou-B7-8sg">
+                                <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                                <color key="backgroundColor" red="0.81960784313725488" green="0.35294117647058826" blue="0.090196078431372548" alpha="1" colorSpace="calibratedRGB"/>
+                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qHg-9T-YnZ">
-                                <rect key="frame" x="20" y="514" width="280" height="34"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <rect key="frame" x="0.0" y="514" width="320" height="34"/>
+                                <color key="backgroundColor" red="0.99040621519088745" green="0.50018942356109619" blue="0.092428512871265411" alpha="0.74517780172413794" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jOv-Tz-9dA">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jOv-Tz-9dA">
                                 <rect key="frame" x="20" y="259" width="280" height="182"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="182" id="uaU-az-4Ur"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Person" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TC9-V0-Nao">
-                                <rect key="frame" x="20" y="87" width="280" height="54"/>
+                                <rect key="frame" x="0.0" y="87" width="320" height="70"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="40"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" red="0.96935033798217773" green="0.38261246681213379" blue="0.080862626433372498" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="TC9-V0-Nao" firstAttribute="top" secondItem="l4L-u0-8Kx" secondAttribute="bottom" constant="23" id="JNW-vt-4Kc"/>
-                            <constraint firstItem="jOv-Tz-9dA" firstAttribute="centerX" secondItem="TC9-V0-Nao" secondAttribute="centerX" id="M4v-kH-q6z"/>
-                            <constraint firstItem="qHg-9T-YnZ" firstAttribute="top" secondItem="jOv-Tz-9dA" secondAttribute="bottom" constant="73" id="MJX-r5-ib1"/>
-                            <constraint firstItem="qHg-9T-YnZ" firstAttribute="leading" secondItem="qee-vy-Qcd" secondAttribute="leadingMargin" id="MOq-pn-67X"/>
-                            <constraint firstItem="jOv-Tz-9dA" firstAttribute="leading" secondItem="qHg-9T-YnZ" secondAttribute="leading" id="OR7-oW-RXT"/>
-                            <constraint firstItem="hcN-qP-DWz" firstAttribute="top" secondItem="qHg-9T-YnZ" secondAttribute="bottom" constant="20" id="TiK-aN-TzN"/>
-                            <constraint firstItem="qHg-9T-YnZ" firstAttribute="trailing" secondItem="qee-vy-Qcd" secondAttribute="trailingMargin" id="Zbh-XZ-zaJ"/>
+                            <constraint firstItem="TC9-V0-Nao" firstAttribute="top" secondItem="l4L-u0-8Kx" secondAttribute="bottom" constant="23" id="01S-Cz-B3S"/>
+                            <constraint firstItem="zou-B7-8sg" firstAttribute="top" secondItem="l4L-u0-8Kx" secondAttribute="bottom" id="1IK-4D-8gC"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="TC9-V0-Nao" secondAttribute="trailing" constant="-20" id="GMa-3k-7GX"/>
+                            <constraint firstItem="qHg-9T-YnZ" firstAttribute="top" secondItem="jOv-Tz-9dA" secondAttribute="bottom" constant="73" id="GUR-hb-Gw1"/>
+                            <constraint firstItem="zou-B7-8sg" firstAttribute="leading" secondItem="qee-vy-Qcd" secondAttribute="leadingMargin" constant="-20" id="OMt-Ef-0Hn"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="zou-B7-8sg" secondAttribute="trailing" constant="-20" id="Ogg-sH-5Gc"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="qHg-9T-YnZ" secondAttribute="trailing" constant="-20" id="Pv6-DL-kMd"/>
+                            <constraint firstItem="qHg-9T-YnZ" firstAttribute="leading" secondItem="qee-vy-Qcd" secondAttribute="leadingMargin" constant="-20" id="RIS-l9-6I4"/>
+                            <constraint firstItem="hcN-qP-DWz" firstAttribute="top" secondItem="qHg-9T-YnZ" secondAttribute="bottom" constant="20" id="WyT-kJ-bMA"/>
                             <constraint firstItem="jOv-Tz-9dA" firstAttribute="top" secondItem="qee-vy-Qcd" secondAttribute="top" constant="259" id="bCV-KZ-Nc5"/>
-                            <constraint firstItem="jOv-Tz-9dA" firstAttribute="trailing" secondItem="qHg-9T-YnZ" secondAttribute="trailing" id="nPy-Dg-6q9"/>
+                            <constraint firstItem="hcN-qP-DWz" firstAttribute="top" secondItem="zou-B7-8sg" secondAttribute="bottom" id="g4t-JA-zcG"/>
+                            <constraint firstItem="jOv-Tz-9dA" firstAttribute="centerX" secondItem="qee-vy-Qcd" secondAttribute="centerX" id="lFi-Gj-jvF"/>
+                            <constraint firstItem="TC9-V0-Nao" firstAttribute="leading" secondItem="qee-vy-Qcd" secondAttribute="leadingMargin" constant="-20" id="zcH-H0-eT5"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Profile" id="Obx-wK-z15">
                         <barButtonItem key="backBarButtonItem" title="nil" id="eJP-ha-hcI"/>
-                        <barButtonItem key="leftBarButtonItem" image="menu.png" id="Zmt-qE-WYL"/>
+                        <barButtonItem key="leftBarButtonItem" image="menu" id="Zmt-qE-WYL"/>
                     </navigationItem>
                     <connections>
                         <outlet property="emailLabel" destination="qHg-9T-YnZ" id="Ymz-Ph-npM"/>
                         <outlet property="nameLabel" destination="TC9-V0-Nao" id="QXv-NP-3au"/>
+                        <outlet property="profileBackgroundImage" destination="zou-B7-8sg" id="0OO-3d-OwK"/>
                         <outlet property="profileImage" destination="jOv-Tz-9dA" id="KeI-Qw-kpy"/>
                         <outlet property="sideBarButton" destination="Zmt-qE-WYL" id="raj-9B-sWe"/>
                     </connections>
@@ -438,12 +452,28 @@
                     <view key="view" contentMode="scaleToFill" id="4kr-PT-mWV">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Kcj-OE-hdo" customClass="JTCalendarMenuView">
+                                <rect key="frame" x="20" y="72" width="280" height="54"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8bz-Xd-hHH" customClass="JTVerticalCalendarView">
+                                <rect key="frame" x="20" y="134" width="280" height="320"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Idw-g7-BDv" customClass="JTCalendarWeekDayView">
+                                <rect key="frame" x="20" y="432" width="280" height="128"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="Calender" id="uhq-dW-5nL">
-                        <barButtonItem key="leftBarButtonItem" image="menu.png" id="Gal-ov-vJV"/>
+                        <barButtonItem key="leftBarButtonItem" image="menu" id="Gal-ov-vJV"/>
                     </navigationItem>
                     <connections>
+                        <outlet property="calendarContentView" destination="8bz-Xd-hHH" id="Hdq-mH-T41"/>
+                        <outlet property="calendarMenuView" destination="Kcj-OE-hdo" id="sYB-70-cQH"/>
                         <outlet property="sideBarButton" destination="Gal-ov-vJV" id="bRT-aX-Mwv"/>
                     </connections>
                 </viewController>
@@ -463,6 +493,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="labs" translatesAutoresizingMaskIntoConstraints="NO" id="jYt-wf-lIA">
+                                <rect key="frame" x="0.0" y="64" width="320" height="559"/>
+                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="800" misplaced="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="ryu-Oc-3nf">
                                 <rect key="frame" x="20" y="64" width="280" height="41"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="33"/>
@@ -496,21 +529,26 @@ The expectations for each student are much higher than any previous year. Genera
                             <constraint firstItem="ryu-Oc-3nf" firstAttribute="leading" secondItem="hW8-pz-cFo" secondAttribute="leadingMargin" id="79N-aV-3Er"/>
                             <constraint firstItem="KIV-1G-CJZ" firstAttribute="top" secondItem="dVa-ai-kAl" secondAttribute="bottom" constant="83" id="7jD-os-lxp"/>
                             <constraint firstItem="KIV-1G-CJZ" firstAttribute="top" secondItem="XWo-oN-ugp" secondAttribute="bottom" id="Awe-6Y-H8I"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="jYt-wf-lIA" secondAttribute="trailing" constant="-20" id="Hx6-ME-Mb2"/>
                             <constraint firstItem="ryu-Oc-3nf" firstAttribute="trailing" secondItem="hW8-pz-cFo" secondAttribute="trailingMargin" id="Il3-0g-47F"/>
                             <constraint firstAttribute="leadingMargin" secondItem="dVa-ai-kAl" secondAttribute="leading" id="R5l-44-lBn"/>
                             <constraint firstAttribute="trailingMargin" secondItem="dVa-ai-kAl" secondAttribute="trailing" id="Rj7-wf-1ln"/>
+                            <constraint firstItem="jYt-wf-lIA" firstAttribute="leading" secondItem="hW8-pz-cFo" secondAttribute="leadingMargin" constant="-20" id="VVT-bU-XtT"/>
                             <constraint firstItem="ryu-Oc-3nf" firstAttribute="top" secondItem="yOG-Ye-7V8" secondAttribute="bottom" id="Wvw-gy-N5X"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="jYt-wf-lIA" secondAttribute="bottom" constant="-55" id="aNG-xm-6Se"/>
                             <constraint firstItem="dVa-ai-kAl" firstAttribute="top" secondItem="ryu-Oc-3nf" secondAttribute="bottom" constant="8" id="iYy-XQ-4iw"/>
                             <constraint firstItem="dVa-ai-kAl" firstAttribute="top" secondItem="ryu-Oc-3nf" secondAttribute="bottom" constant="8" id="o5Y-vV-0J7"/>
                             <constraint firstItem="XWo-oN-ugp" firstAttribute="centerX" secondItem="hW8-pz-cFo" secondAttribute="centerX" id="r6J-BM-LwD"/>
+                            <constraint firstItem="jYt-wf-lIA" firstAttribute="top" secondItem="yOG-Ye-7V8" secondAttribute="bottom" id="vCP-MR-M4i"/>
                             <constraint firstItem="dVa-ai-kAl" firstAttribute="centerX" secondItem="hW8-pz-cFo" secondAttribute="centerX" id="zg3-hA-xzj"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Science Class" id="Gaq-LR-LdE">
-                        <barButtonItem key="leftBarButtonItem" image="menu.png" id="rZf-K9-vI0"/>
+                        <barButtonItem key="leftBarButtonItem" image="menu" id="rZf-K9-vI0"/>
                     </navigationItem>
                     <connections>
                         <outlet property="classNameLabel" destination="ryu-Oc-3nf" id="Ido-4M-zJA"/>
+                        <outlet property="classesBackgroundImage" destination="jYt-wf-lIA" id="v1O-Xd-m4q"/>
                         <outlet property="expectLabel" destination="dVa-ai-kAl" id="gtC-CB-U03"/>
                         <outlet property="sideBarButton" destination="rZf-K9-vI0" id="ysR-sC-FM7"/>
                         <outlet property="toleranceLabel" destination="XWo-oN-ugp" id="tzh-5b-Yow"/>
@@ -534,7 +572,7 @@ The expectations for each student are much higher than any previous year. Genera
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="XdO-U8-EG9">
-                        <barButtonItem key="leftBarButtonItem" image="menu.png" id="Kqc-DF-IDJ"/>
+                        <barButtonItem key="leftBarButtonItem" image="menu" id="Kqc-DF-IDJ"/>
                     </navigationItem>
                     <connections>
                         <outlet property="sideBarButton" destination="Kqc-DF-IDJ" id="XG5-3N-rDO"/>
@@ -678,8 +716,11 @@ The expectations for each student are much higher than any previous year. Genera
         <image name="calanderIcon" width="225" height="225"/>
         <image name="chatIcon" width="225" height="225"/>
         <image name="classesIcon" width="225" height="225"/>
-        <image name="menu.png" width="510" height="170"/>
+        <image name="labs" width="217" height="232"/>
+        <image name="menu" width="28" height="20"/>
+        <image name="periodic" width="255" height="197"/>
         <image name="profile" width="160" height="162"/>
+        <image name="science" width="225" height="225"/>
         <image name="storage" width="204" height="204"/>
     </resources>
     <inferredMetricsTieBreakers>

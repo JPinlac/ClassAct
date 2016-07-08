@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:ClassAct/GoogleService-Info.plist">
+   </FileRef>
+   <FileRef
       location = "group:ClassAct.xcodeproj">
    </FileRef>
    <FileRef

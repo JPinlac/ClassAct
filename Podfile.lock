@@ -73,6 +73,7 @@ PODS:
   - JSQMessagesViewController (7.3.3):
     - JSQSystemSoundPlayer (~> 2.0.1)
   - JSQSystemSoundPlayer (2.0.1)
+  - JTCalendar (2.1.7)
 
 DEPENDENCIES:
   - FBSDKCoreKit
@@ -86,6 +87,7 @@ DEPENDENCIES:
   - GoogleSignIn
   - GTMOAuth2
   - JSQMessagesViewController
+  - JTCalendar (~> 2.1)
 
 SPEC CHECKSUMS:
   Bolts: a0058fa3b331c5a1e4402d534f2dae36dbff31e4
@@ -110,7 +112,8 @@ SPEC CHECKSUMS:
   GTMSessionFetcher: 174bc61d5238f81f9ddb807b0b0170420f67de85
   JSQMessagesViewController: 0ee3f80237268192a3e8337fd0d787f1a1bf5a7a
   JSQSystemSoundPlayer: c5850e77a4363ffd374cd851154b9af93264ed8d
+  JTCalendar: bc7f3086a4df02aa2e02ac4d505ef888cc2283a0
 
-PODFILE CHECKSUM: 0f16d2283281db946bba87a2ed7053291b3d0131
+PODFILE CHECKSUM: ec4681344449c084bba32d7da60bfc8b8f157057
 
 COCOAPODS: 1.0.1

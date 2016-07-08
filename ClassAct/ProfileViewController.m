@@ -36,6 +36,8 @@
         // No user is signed in.
     }
     [self populateLabels];
+    [self withBorders];
+    [self backgroundImageChange];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -55,13 +57,27 @@
 -(void)populateLabels{
     _nameLabel.text = _userObj.displayName;
     _emailLabel.text = _userObj.email;
-    
     NSData *imageData = [NSData dataWithContentsOfURL:_userObj.photoURL];
-    self.profileImage.image = [UIImage imageWithData:imageData];
+    if(_userObj.photoURL != nil){
+        self.profileImage.image = [UIImage imageWithData:imageData];
+    } else {
+        _profileImage.image = [UIImage imageNamed:@"DNA.png"];
+    }
 //    _profileImage = _userObj.photoURL;
     
 }
 
-
-
+-(void)withBorders{
+    _nameLabel.layer.borderWidth = 5.0f;
+    _nameLabel.layer.borderColor = [[UIColor colorWithRed:28.0/255.0f green:158.0/255.0f blue:143.0/255.0f  alpha:0.7]CGColor];
+    _nameLabel.layer.cornerRadius = 7.0f;
+    
+    _profileImage.layer.borderWidth = 7.0f;
+    _profileImage.layer.borderColor = [[UIColor colorWithRed:240.0/255.0f green:192.0/255.0f blue:81.0/255.0f alpha:0.7]CGColor];
+    _profileImage.layer.cornerRadius = 5.0f;
+    
+}
+-(void)backgroundImageChange{
+    _profileBackgroundImage.alpha = 0.2f;
+}
 @end

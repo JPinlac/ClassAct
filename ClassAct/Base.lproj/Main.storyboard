@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -533,13 +533,13 @@
                                 <rect key="frame" x="20" y="72" width="280" height="54"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </view>
-                            <view opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8bz-Xd-hHH" customClass="JTVerticalCalendarView">
-                                <rect key="frame" x="20" y="134" width="280" height="320"/>
-                                <color key="backgroundColor" red="0.15686274509803921" green="0.68627450980392157" blue="0.5490196078431373" alpha="1" colorSpace="calibratedRGB"/>
-                            </view>
                             <view opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Idw-g7-BDv" customClass="JTCalendarWeekDayView">
                                 <rect key="frame" x="20" y="432" width="280" height="128"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            </view>
+                            <view opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8bz-Xd-hHH" customClass="JTVerticalCalendarView">
+                                <rect key="frame" x="20" y="134" width="280" height="320"/>
+                                <color key="backgroundColor" red="0.15686274509803921" green="0.68627450980392157" blue="0.5490196078431373" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -580,9 +580,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="LyW-Ii-WG7">
-                                <rect key="frame" x="20" y="68" width="280" height="251"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="LyW-Ii-WG7">
+                                <rect key="frame" x="20" y="68" width="280" height="151"/>
+                                <color key="backgroundColor" red="0.15686274509803921" green="0.68627450980392157" blue="0.5490196078431373" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="151" id="ebw-Gb-dnb"/>
+                                </constraints>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="eventCell" textLabel="Lam-bS-Wxp" detailTextLabel="oDU-Ya-JRn" style="IBUITableViewCellStyleSubtitle" id="H2f-Hg-p69">
                                         <rect key="frame" x="0.0" y="92" width="280" height="44"/>
@@ -607,6 +610,7 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" red="1" green="0.80000001190000003" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
@@ -614,14 +618,23 @@
                                     <outlet property="delegate" destination="kOP-ZN-8j0" id="cHF-sN-7Kp"/>
                                 </connections>
                             </tableView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Event Details" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T0J-eZ-9lN">
-                                <rect key="frame" x="20" y="337" width="280" height="202"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T0J-eZ-9lN">
+                                <rect key="frame" x="20" y="235" width="280" height="333"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.15686274509803921" green="0.68627450980392157" blue="0.5490196078431373" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="LyW-Ii-WG7" firstAttribute="leading" secondItem="jNE-Fz-kSZ" secondAttribute="leadingMargin" id="DiM-PN-Hd7"/>
+                            <constraint firstItem="LyW-Ii-WG7" firstAttribute="top" secondItem="BMR-ss-E3Y" secondAttribute="bottom" constant="4" id="EXu-jL-Xlf"/>
+                            <constraint firstItem="LyW-Ii-WG7" firstAttribute="trailing" secondItem="jNE-Fz-kSZ" secondAttribute="trailingMargin" id="M9N-6X-2Fq"/>
+                            <constraint firstItem="T0J-eZ-9lN" firstAttribute="trailing" secondItem="jNE-Fz-kSZ" secondAttribute="trailingMargin" id="QY3-08-oLx"/>
+                            <constraint firstItem="gwu-bn-tYo" firstAttribute="top" secondItem="T0J-eZ-9lN" secondAttribute="bottom" id="cTL-4V-ij1"/>
+                            <constraint firstItem="T0J-eZ-9lN" firstAttribute="top" secondItem="LyW-Ii-WG7" secondAttribute="bottom" constant="16" id="l5J-F6-vhW"/>
+                            <constraint firstItem="T0J-eZ-9lN" firstAttribute="leading" secondItem="jNE-Fz-kSZ" secondAttribute="leadingMargin" id="oJt-hZ-e0A"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="5Ta-NM-Oyv"/>
                     <connections>

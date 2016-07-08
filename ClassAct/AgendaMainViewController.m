@@ -95,7 +95,7 @@
                     NSMutableArray *eventList = [[NSMutableArray alloc]init];
                     [calendar.events setObject:eventList forKey:key];
                 }
-                Event *newEvent = [[Event alloc] initWithDate:event.start.dateTime.date end:event.end.dateTime.date eventDescription:event.description hangoutLink:event.hangoutLink summary:event.summary location:event.location];
+                Event *newEvent = [[Event alloc] initWithDate:event.start.dateTime.date end:event.end.dateTime.date eventDescription:event.descriptionProperty hangoutLink:event.hangoutLink summary:event.summary location:event.location];
                 [calendar.events[key] addObject:newEvent];
             }
             

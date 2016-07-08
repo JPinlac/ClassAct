@@ -19,6 +19,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    [_eventLabel sizeToFit];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -35,7 +36,6 @@
     return [_eventsSelected count];
 }
 
-
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"eventCell" forIndexPath:indexPath];
     Event *event = [_eventsSelected objectAtIndex:indexPath.row];
@@ -44,12 +44,20 @@
     cell.detailTextLabel.text = stringFromDate;
     return cell;
 }
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    //where indexPath.row is the selected cell
+    Event *event = [_eventsSelected objectAtIndex:indexPath.row];
+    _eventLabel.text = [NSString stringWithFormat:@"%@\n\nDescription: %@\n\nLocation: %@\n\nLink: %@", event.summary, event.eventDescription, event.location, event.hangoutLink];
+}
+
+
 - (NSDateFormatter *)dateFormatter
 {
     static NSDateFormatter *dateFormatter;
     if(!dateFormatter){
         dateFormatter = [NSDateFormatter new];
-        dateFormatter.dateFormat = @"dd-MM-yyyy";
+        dateFormatter.dateFormat = @"h:m a";
     }
     
     return dateFormatter;

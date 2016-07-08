@@ -48,7 +48,7 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     //where indexPath.row is the selected cell
     Event *event = [_eventsSelected objectAtIndex:indexPath.row];
-    _eventLabel.text = [NSString stringWithFormat:@"%@\nDescription: %@\nLocation: %@\nLink: %@", event.summary, event.eventDescription, event.location, event.hangoutLink];
+    _eventLabel.text = [NSString stringWithFormat:@"%@\n\nDescription: %@\n\nLocation: %@\n\nLink: %@", event.summary, event.eventDescription, event.location, event.hangoutLink];
 }
 
 

@@ -11,12 +11,12 @@
 #import "AppDelegate.h"
 #import "Calendar.h"
 #import "Event.h"
+#import "EventViewController.h"
 
 @interface CalenderViewController (){
-//    NSMutableDictionary *_eventsByDate;
-    
     NSDate *_dateSelected;
 }
+@property (strong, nonatomic)NSMutableArray *eventsSelected;
 
 @end
 
@@ -170,13 +170,8 @@
         }
     }
     NSString *key = [[self dateFormatter] stringFromDate:_dateSelected];
-    Event *events =[Calendar sharedInstance].events[key];
-    NSLog(@"%@", [Calendar sharedInstance].events);
-    NSLog(@"%@", events);
-    for(Event *event in events){
-        NSLog(@"Hi");
-        
-    }
+    _eventsSelected = [Calendar sharedInstance].events[key];
+    [self performSegueWithIdentifier:@"eventSegue" sender:self];
 }
 
 #pragma mark - Fake data
@@ -204,14 +199,16 @@
     
 }
 
-/*
+
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
+    EventViewController *vc = [segue destinationViewController];
+    vc.eventsSelected = _eventsSelected;
 }
-*/
+
 
 @end

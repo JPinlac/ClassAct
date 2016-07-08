@@ -11,10 +11,11 @@
 @import Firebase;
 #import <GoogleSignIn/GoogleSignIn.h>
 #import "AppDelegate.h"
+#import "Calendar.h"
+#import "Event.h"
 
 @interface AgendaMainViewController ()
 @property FIRDatabaseReference *ref;
-
 @end
 
 @implementation AgendaMainViewController
@@ -31,7 +32,6 @@
     _ref = [[FIRDatabase database] reference];
     
     _cservice = [(AppDelegate *)[[UIApplication sharedApplication] delegate] calendarService];
-    
     [self findMotivation];
     [self blinkTextInLabel:_agendaLabel toColor:[UIColor orangeColor]];
     [self changeBorders];
@@ -59,7 +59,7 @@
 }
 - (void)fetchEvents {
     GTLQueryCalendar *query = [GTLQueryCalendar queryForEventsListWithCalendarId:@"primary"];
-    query.maxResults = 10;
+    query.maxResults = 50;
     query.timeMin = [GTLDateTime dateTimeWithDate:[NSDate date]
                                          timeZone:[NSTimeZone localTimeZone]];;
     query.singleEvents = YES;
@@ -76,14 +76,27 @@
     if (error == nil) {
         NSMutableString *eventString = [[NSMutableString alloc] init];
         if (events.items.count > 0) {
+            int agendaCount = 0;
             for (GTLCalendarEvent *event in events) {
-                GTLDateTime *start = event.start.dateTime ?: event.start.date;
-                NSString *startString =
-                [NSDateFormatter localizedStringFromDate:[start date]
-                                               dateStyle:NSDateFormatterShortStyle
-                                               timeStyle:NSDateFormatterShortStyle];
-                [eventString appendFormat:@"%@ - %@\n", startString, event.summary];
+                if(agendaCount < 10){
+                    GTLDateTime *start = event.start.dateTime ?: event.start.date;
+                    NSString *startString =
+                    [NSDateFormatter localizedStringFromDate:[start date]
+                                                   dateStyle:NSDateFormatterShortStyle
+                                                   timeStyle:NSDateFormatterShortStyle];
+                    [eventString appendFormat:@"%@ - %@\n", startString, event.summary];
+                }
+                
+                
+                NSString *key = [[self dateFormatter] stringFromDate:event.start.dateTime.date];
+
+                if(![Calendar sharedInstance].events[key]){
+                    Event *newEvent = [[Event alloc] initWithDate:event.start.dateTime.date end:event.end.dateTime.date eventDescription:event.description hangoutLink:event.hangoutLink summary:event.summary location:event.location];
+                    [[Calendar sharedInstance].events setObject:newEvent forKey:key];
+                }
+                
             }
+            
         } else {
             [eventString appendString:@"No upcoming events found."];
         }
@@ -93,6 +106,16 @@
     }
 }
 
+- (NSDateFormatter *)dateFormatter
+{
+    static NSDateFormatter *dateFormatter;
+    if(!dateFormatter){
+        dateFormatter = [NSDateFormatter new];
+        dateFormatter.dateFormat = @"dd-MM-yyyy";
+    }
+    
+    return dateFormatter;
+}
 // Helper for showing an alert
 - (void)showAlert:(NSString *)title message:(NSString *)message {
     UIAlertController *alert =

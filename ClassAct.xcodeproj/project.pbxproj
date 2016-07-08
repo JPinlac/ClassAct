@@ -8,12 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		27EFEE3BBE456190E0A58362 /* libPods-ClassAct.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D5D7333FA65AE41E5F4457FA /* libPods-ClassAct.a */; };
-		432104E51D2E9F7900A2755F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 432104E41D2E9F7900A2755F /* GoogleService-Info.plist */; };
 		438E782A1D26CE1000191F71 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 438E78291D26CE1000191F71 /* Main.storyboard */; };
 		43920DE61D22CF1400C6FE12 /* RearViewMenuControllerTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43920DE51D22CF1400C6FE12 /* RearViewMenuControllerTableViewController.m */; };
 		43920DE91D22CFE500C6FE12 /* AgendaMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43920DE81D22CFE500C6FE12 /* AgendaMainViewController.m */; };
 		43920DF01D22ECBE00C6FE12 /* LogInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43920DEF1D22ECBE00C6FE12 /* LogInViewController.m */; };
 		43920DF31D230D7C00C6FE12 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43920DF21D230D7C00C6FE12 /* SWRevealViewController.m */; };
+		43AF8C6C1D2ED0130049D0E3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 43AF8C6B1D2ED0130049D0E3 /* GoogleService-Info.plist */; };
+		43AF8C741D2EE3C30049D0E3 /* Calendar.m in Sources */ = {isa = PBXBuildFile; fileRef = 43AF8C731D2EE3C30049D0E3 /* Calendar.m */; };
+		43AF8C771D2EE5D80049D0E3 /* Event.m in Sources */ = {isa = PBXBuildFile; fileRef = 43AF8C761D2EE5D80049D0E3 /* Event.m */; };
 		43BFD1401D258CFF00F58EBF /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43BFD13F1D258CFF00F58EBF /* ProfileViewController.m */; };
 		43BFD1431D258D4300F58EBF /* CalenderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43BFD1421D258D4300F58EBF /* CalenderViewController.m */; };
 		43BFD1491D258E0F00F58EBF /* ClassesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43BFD1481D258E0F00F58EBF /* ClassesViewController.m */; };
@@ -26,7 +28,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		432104E41D2E9F7900A2755F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		438E78291D26CE1000191F71 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		43920DE41D22CF1400C6FE12 /* RearViewMenuControllerTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RearViewMenuControllerTableViewController.h; sourceTree = "<group>"; };
 		43920DE51D22CF1400C6FE12 /* RearViewMenuControllerTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RearViewMenuControllerTableViewController.m; sourceTree = "<group>"; };
@@ -36,6 +37,11 @@
 		43920DEF1D22ECBE00C6FE12 /* LogInViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LogInViewController.m; sourceTree = "<group>"; };
 		43920DF11D230D7400C6FE12 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
 		43920DF21D230D7C00C6FE12 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
+		43AF8C6B1D2ED0130049D0E3 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		43AF8C721D2EE3C30049D0E3 /* Calendar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Calendar.h; path = ../Calendar.h; sourceTree = "<group>"; };
+		43AF8C731D2EE3C30049D0E3 /* Calendar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Calendar.m; path = ../Calendar.m; sourceTree = "<group>"; };
+		43AF8C751D2EE5D80049D0E3 /* Event.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Event.h; sourceTree = "<group>"; };
+		43AF8C761D2EE5D80049D0E3 /* Event.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Event.m; sourceTree = "<group>"; };
 		43BFD13E1D258CFF00F58EBF /* ProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileViewController.h; sourceTree = "<group>"; };
 		43BFD13F1D258CFF00F58EBF /* ProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileViewController.m; sourceTree = "<group>"; };
 		43BFD1411D258D4300F58EBF /* CalenderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalenderViewController.h; sourceTree = "<group>"; };
@@ -78,6 +84,44 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		43AF8C6D1D2EE2B70049D0E3 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				43D0EB3D1D2A04C1001E6A5E /* ChatViewController.h */,
+				43D0EB3E1D2A04C1001E6A5E /* ChatViewController.m */,
+				43C56D811D216B6200C56ECC /* AppDelegate.h */,
+				43C56D821D216B6200C56ECC /* AppDelegate.m */,
+				43BFD1471D258E0F00F58EBF /* ClassesViewController.h */,
+				43BFD1481D258E0F00F58EBF /* ClassesViewController.m */,
+				43BFD1411D258D4300F58EBF /* CalenderViewController.h */,
+				43BFD1421D258D4300F58EBF /* CalenderViewController.m */,
+				43BFD13E1D258CFF00F58EBF /* ProfileViewController.h */,
+				43BFD13F1D258CFF00F58EBF /* ProfileViewController.m */,
+				43920DEE1D22ECBE00C6FE12 /* LogInViewController.h */,
+				43920DEF1D22ECBE00C6FE12 /* LogInViewController.m */,
+				43920DF21D230D7C00C6FE12 /* SWRevealViewController.m */,
+				43920DF11D230D7400C6FE12 /* SWRevealViewController.h */,
+				43920DE71D22CFE500C6FE12 /* AgendaMainViewController.h */,
+				43920DE81D22CFE500C6FE12 /* AgendaMainViewController.m */,
+				43920DE41D22CF1400C6FE12 /* RearViewMenuControllerTableViewController.h */,
+				43920DE51D22CF1400C6FE12 /* RearViewMenuControllerTableViewController.m */,
+				87301EDD1D244A00006F63AF /* FileStorageViewController.h */,
+				87301EDE1D244A00006F63AF /* FileStorageViewController.m */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		43AF8C711D2EE2DF0049D0E3 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				43AF8C721D2EE3C30049D0E3 /* Calendar.h */,
+				43AF8C731D2EE3C30049D0E3 /* Calendar.m */,
+				43AF8C751D2EE5D80049D0E3 /* Event.h */,
+				43AF8C761D2EE5D80049D0E3 /* Event.m */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
 		43C56D721D216B6200C56ECC = {
 			isa = PBXGroup;
 			children = (
@@ -100,30 +144,12 @@
 			isa = PBXGroup;
 			children = (
 				438E78291D26CE1000191F71 /* Main.storyboard */,
-				43D0EB3D1D2A04C1001E6A5E /* ChatViewController.h */,
-				43D0EB3E1D2A04C1001E6A5E /* ChatViewController.m */,
-				43C56D811D216B6200C56ECC /* AppDelegate.h */,
-				43C56D821D216B6200C56ECC /* AppDelegate.m */,
-				43BFD1471D258E0F00F58EBF /* ClassesViewController.h */,
-				43BFD1481D258E0F00F58EBF /* ClassesViewController.m */,
-				43BFD1411D258D4300F58EBF /* CalenderViewController.h */,
-				43BFD1421D258D4300F58EBF /* CalenderViewController.m */,
-				43BFD13E1D258CFF00F58EBF /* ProfileViewController.h */,
-				43BFD13F1D258CFF00F58EBF /* ProfileViewController.m */,
-				43920DEE1D22ECBE00C6FE12 /* LogInViewController.h */,
-				43920DEF1D22ECBE00C6FE12 /* LogInViewController.m */,
-				43920DF21D230D7C00C6FE12 /* SWRevealViewController.m */,
-				43920DF11D230D7400C6FE12 /* SWRevealViewController.h */,
-				43920DE71D22CFE500C6FE12 /* AgendaMainViewController.h */,
-				43920DE81D22CFE500C6FE12 /* AgendaMainViewController.m */,
-				43920DE41D22CF1400C6FE12 /* RearViewMenuControllerTableViewController.h */,
-				43920DE51D22CF1400C6FE12 /* RearViewMenuControllerTableViewController.m */,
-				87301EDD1D244A00006F63AF /* FileStorageViewController.h */,
-				87301EDE1D244A00006F63AF /* FileStorageViewController.m */,
+				43AF8C711D2EE2DF0049D0E3 /* Models */,
+				43AF8C6D1D2EE2B70049D0E3 /* Controllers */,
 				43C56D8A1D216B6200C56ECC /* Assets.xcassets */,
 				43C56D8C1D216B6200C56ECC /* LaunchScreen.storyboard */,
-				432104E41D2E9F7900A2755F /* GoogleService-Info.plist */,
 				43C56D8F1D216B6200C56ECC /* Info.plist */,
+				43AF8C6B1D2ED0130049D0E3 /* GoogleService-Info.plist */,
 				43C56D7E1D216B6200C56ECC /* Supporting Files */,
 			);
 			path = ClassAct;
@@ -216,7 +242,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				43C56D8E1D216B6200C56ECC /* LaunchScreen.storyboard in Resources */,
-				432104E51D2E9F7900A2755F /* GoogleService-Info.plist in Resources */,
+				43AF8C6C1D2ED0130049D0E3 /* GoogleService-Info.plist in Resources */,
 				43C56D8B1D216B6200C56ECC /* Assets.xcassets in Resources */,
 				438E782A1D26CE1000191F71 /* Main.storyboard in Resources */,
 			);
@@ -400,6 +426,8 @@
 				43920DF01D22ECBE00C6FE12 /* LogInViewController.m in Sources */,
 				43BFD1431D258D4300F58EBF /* CalenderViewController.m in Sources */,
 				43D0EB3F1D2A04C1001E6A5E /* ChatViewController.m in Sources */,
+				43AF8C771D2EE5D80049D0E3 /* Event.m in Sources */,
+				43AF8C741D2EE3C30049D0E3 /* Calendar.m in Sources */,
 				43C56D831D216B6200C56ECC /* AppDelegate.m in Sources */,
 				43BFD1401D258CFF00F58EBF /* ProfileViewController.m in Sources */,
 				87301EDF1D244A00006F63AF /* FileStorageViewController.m in Sources */,

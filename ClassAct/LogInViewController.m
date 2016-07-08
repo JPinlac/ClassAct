@@ -24,7 +24,7 @@ FIRDatabaseReference *ref;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self.view setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"ClassActLogin.png"]]];
+//    [self.view setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"ClassActLogin.png"]]];
     ref = [[FIRDatabase database] reference];
     // TODO(developer) Configure the sign-in button look/feel
 //    GIDSignInButton *googleButton  =[[GIDSignInButton alloc] init];

@@ -14,6 +14,7 @@
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *sideBarButton;
 @property (nonatomic, strong) GTLServiceCalendar *cservice;
 
+@property (weak, nonatomic) IBOutlet UIImageView *calenderBackgrounf;
 
 @property (weak, nonatomic) IBOutlet JTCalendarMenuView *calendarMenuView;
 @property (weak, nonatomic) IBOutlet JTCalendarWeekDayView *weekDayView;

@@ -16,6 +16,7 @@
 		43AF8C6C1D2ED0130049D0E3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 43AF8C6B1D2ED0130049D0E3 /* GoogleService-Info.plist */; };
 		43AF8C741D2EE3C30049D0E3 /* Calendar.m in Sources */ = {isa = PBXBuildFile; fileRef = 43AF8C731D2EE3C30049D0E3 /* Calendar.m */; };
 		43AF8C771D2EE5D80049D0E3 /* Event.m in Sources */ = {isa = PBXBuildFile; fileRef = 43AF8C761D2EE5D80049D0E3 /* Event.m */; };
+		43AF8C7A1D2FF5BB0049D0E3 /* EventViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43AF8C791D2FF5BB0049D0E3 /* EventViewController.m */; };
 		43BFD1401D258CFF00F58EBF /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43BFD13F1D258CFF00F58EBF /* ProfileViewController.m */; };
 		43BFD1431D258D4300F58EBF /* CalenderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43BFD1421D258D4300F58EBF /* CalenderViewController.m */; };
 		43BFD1491D258E0F00F58EBF /* ClassesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43BFD1481D258E0F00F58EBF /* ClassesViewController.m */; };
@@ -42,6 +43,8 @@
 		43AF8C731D2EE3C30049D0E3 /* Calendar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Calendar.m; path = ../Calendar.m; sourceTree = "<group>"; };
 		43AF8C751D2EE5D80049D0E3 /* Event.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Event.h; sourceTree = "<group>"; };
 		43AF8C761D2EE5D80049D0E3 /* Event.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Event.m; sourceTree = "<group>"; };
+		43AF8C781D2FF5BB0049D0E3 /* EventViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventViewController.h; sourceTree = "<group>"; };
+		43AF8C791D2FF5BB0049D0E3 /* EventViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventViewController.m; sourceTree = "<group>"; };
 		43BFD13E1D258CFF00F58EBF /* ProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileViewController.h; sourceTree = "<group>"; };
 		43BFD13F1D258CFF00F58EBF /* ProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileViewController.m; sourceTree = "<group>"; };
 		43BFD1411D258D4300F58EBF /* CalenderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalenderViewController.h; sourceTree = "<group>"; };
@@ -95,6 +98,8 @@
 				43BFD1481D258E0F00F58EBF /* ClassesViewController.m */,
 				43BFD1411D258D4300F58EBF /* CalenderViewController.h */,
 				43BFD1421D258D4300F58EBF /* CalenderViewController.m */,
+				43AF8C781D2FF5BB0049D0E3 /* EventViewController.h */,
+				43AF8C791D2FF5BB0049D0E3 /* EventViewController.m */,
 				43BFD13E1D258CFF00F58EBF /* ProfileViewController.h */,
 				43BFD13F1D258CFF00F58EBF /* ProfileViewController.m */,
 				43920DEE1D22ECBE00C6FE12 /* LogInViewController.h */,
@@ -442,6 +447,7 @@
 				43920DF01D22ECBE00C6FE12 /* LogInViewController.m in Sources */,
 				43BFD1431D258D4300F58EBF /* CalenderViewController.m in Sources */,
 				43D0EB3F1D2A04C1001E6A5E /* ChatViewController.m in Sources */,
+				43AF8C7A1D2FF5BB0049D0E3 /* EventViewController.m in Sources */,
 				43AF8C771D2EE5D80049D0E3 /* Event.m in Sources */,
 				43AF8C741D2EE3C30049D0E3 /* Calendar.m in Sources */,
 				43C56D831D216B6200C56ECC /* AppDelegate.m in Sources */,

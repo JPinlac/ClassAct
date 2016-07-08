@@ -73,6 +73,7 @@
 - (void)displayResultWithTicket:(GTLServiceTicket *)ticket
              finishedWithObject:(GTLCalendarEvents *)events
                           error:(NSError *)error {
+    
     if (error == nil) {
         NSMutableString *eventString = [[NSMutableString alloc] init];
         if (events.items.count > 0) {
@@ -89,12 +90,13 @@
                 
                 
                 NSString *key = [[self dateFormatter] stringFromDate:event.start.dateTime.date];
-
-                if(![Calendar sharedInstance].events[key]){
-                    Event *newEvent = [[Event alloc] initWithDate:event.start.dateTime.date end:event.end.dateTime.date eventDescription:event.description hangoutLink:event.hangoutLink summary:event.summary location:event.location];
-                    [[Calendar sharedInstance].events setObject:newEvent forKey:key];
+                Calendar *calendar = [Calendar sharedInstance];
+                if(!calendar.events[key]){
+                    NSMutableArray *eventList = [[NSMutableArray alloc]init];
+                    [calendar.events setObject:eventList forKey:key];
                 }
-                
+                Event *newEvent = [[Event alloc] initWithDate:event.start.dateTime.date end:event.end.dateTime.date eventDescription:event.description hangoutLink:event.hangoutLink summary:event.summary location:event.location];
+                [calendar.events[key] addObject:newEvent];
             }
             
         } else {

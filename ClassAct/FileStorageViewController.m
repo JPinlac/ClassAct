@@ -65,10 +65,6 @@ NSMutableArray *remoteFileList;
 }
 
 - (IBAction)UploadButton:(id)sender {
-    NSLog(@"********************************************************");
-    NSLog(@"upload button pushed");
-    
-    NSLog(@"remote target for upload is %@", [firebaseStorageDirectory child:_UploadFileTextField.text]);
     
     FIRStorageUploadTask *uploadTask =
         [
@@ -96,8 +92,6 @@ NSMutableArray *remoteFileList;
 };
 
 - (IBAction)DownloadButton:(id)sender {
-    NSLog(@"********************************************************");
-    NSLog(@"download button pushed");
     
     FIRStorageDownloadTask *downloadTask = [[firebaseStorageDirectory child:_DownloadFileTextField.text] writeToFile:[NSURL fileURLWithPath:[localDirectory stringByAppendingString:_DownloadFileTextField.text]] completion:^(NSURL * _Nullable URL, NSError * _Nullable error)
     {
@@ -106,9 +100,8 @@ NSMutableArray *remoteFileList;
             NSLog(@"an error occurred %@", error);// Uh-oh, an error occurred!
         } else
         {
-            NSLog(@" ");
-            NSLog(@"file downloaded successfully to %@%@", localDirectory, _DownloadFileTextField.text);// Local file URL for "images/island.jpg" is returned
-            NSLog(@" ");
+            NSLog(@"file downloaded successfully to %@%@", localDirectory, _DownloadFileTextField.text);
+            [self displayLocalFiles];
         }
     }];
 }
@@ -118,8 +111,18 @@ NSMutableArray *remoteFileList;
     FIRDatabaseReference *fireDB = [[FIRDatabase database] reference];
     FIRDatabaseReference *fileRef = [fireDB child:@"files"].childByAutoId;
     
+                    FIRDatabaseQuery *existingRefsWithSameName = [fileRef queryEqualToValue:NULL childKey:_UploadFileTextField.text];
+                    
+                    if (existingRefsWithSameName == NULL)
+                    {
+                        NSLog(@"no other references with this name");
+                    }
+                    else
+                    {
+                        NSLog(@"%@", existingRefsWithSameName);
+                    }
+    
     NSDictionary *fileRefToAdd = @{@"fileName" : fileName};
-    NSLog(@"dictionary at firebase save: %@", fileRefToAdd.description);
     
     [fileRef setValue:fileRefToAdd];
 }
@@ -130,6 +133,7 @@ NSMutableArray *remoteFileList;
     FIRDatabaseReference *filesRef = [fireDB.ref child:@"files"];
     
     FIRDatabaseQuery *currentFileList = [filesRef queryOrderedByChild:@"files"];
+    
     __block NSString *fileNameString = @"";
     [currentFileList observeEventType: FIRDataEventTypeChildAdded withBlock:^(FIRDataSnapshot *snapshot)
     {
@@ -138,9 +142,9 @@ NSMutableArray *remoteFileList;
         fileNameString = [fileNameString stringByAppendingString:@"\n"];
         _DownloadFileTextView.text = fileNameString;
         [_DownloadFileTextView reloadInputViews];
-        NSLog(@"from query: fileNameString is... %@", fileNameString);
-
     }];
+    
+
 }
 
 -(void) displayLocalFiles {
@@ -162,7 +166,6 @@ NSMutableArray *remoteFileList;
         localFileListBuffer = [localFileListBuffer stringByAppendingString:localFileList[i]];
         localFileListBuffer = [localFileListBuffer stringByAppendingString:@"\n"];
     };
-    NSLog(@"localFileListBuffer is %@", localFileListBuffer);
     _UploadFileTextView.text = localFileListBuffer;
 
 }

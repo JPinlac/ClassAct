@@ -11,11 +11,12 @@
 #import "AppDelegate.h"
 #import "Calendar.h"
 #import "Event.h"
+#import "EventViewController.h"
+
 @interface CalenderViewController (){
-//    NSMutableDictionary *_eventsByDate;
-    
     NSDate *_dateSelected;
 }
+@property (strong, nonatomic)NSMutableArray *eventsSelected;
 
 @end
 
@@ -60,36 +61,36 @@
     // Dispose of any resources that can be recreated.
 }
 #pragma mark - fetch google calendar events
-- (void)fetchEvents {
-    GTLQueryCalendar *query = [GTLQueryCalendar queryForEventsListWithCalendarId:@"primary"];
-    query.maxResults = 10;
-    query.timeMin = [GTLDateTime dateTimeWithDate:[NSDate date]
-                                         timeZone:[NSTimeZone localTimeZone]];;
-    query.singleEvents = YES;
-    query.orderBy = kGTLCalendarOrderByStartTime;
-    
-    [_cservice executeQuery:query
-                   delegate:self
-          didFinishSelector:@selector(printEvents:finishedWithObject:error:)];
-}
-
-- (void)printEvents:(GTLServiceTicket *)ticket
-             finishedWithObject:(GTLCalendarEvents *)events
-                          error:(NSError *)error {
-//    _eventsByDate = [NSMutableDictionary new];
+//- (void)fetchEvents {
+//    GTLQueryCalendar *query = [GTLQueryCalendar queryForEventsListWithCalendarId:@"primary"];
+//    query.maxResults = 10;
+//    query.timeMin = [GTLDateTime dateTimeWithDate:[NSDate date]
+//                                         timeZone:[NSTimeZone localTimeZone]];;
+//    query.singleEvents = YES;
+//    query.orderBy = kGTLCalendarOrderByStartTime;
 //    
-//    for(GTLCalendarEvent *event in events){
-//        NSDate *date = event.start.dateTime.date;
-//        NSString *key = [[self dateFormatter] stringFromDate:date];
+//    [_cservice executeQuery:query
+//                   delegate:self
+//          didFinishSelector:@selector(printEvents:finishedWithObject:error:)];
+//}
 //
-//        if(!_eventsByDate[key]){
-//            _eventsByDate[key] = [NSMutableArray new];
-//        }
-//        NSLog(@"%@", event);
-//        [_eventsByDate[key] addObject:date];
-//        
-//    }
-}
+//- (void)printEvents:(GTLServiceTicket *)ticket
+//             finishedWithObject:(GTLCalendarEvents *)events
+//                          error:(NSError *)error {
+////    _eventsByDate = [NSMutableDictionary new];
+////    
+////    for(GTLCalendarEvent *event in events){
+////        NSDate *date = event.start.dateTime.date;
+////        NSString *key = [[self dateFormatter] stringFromDate:date];
+////
+////        if(!_eventsByDate[key]){
+////            _eventsByDate[key] = [NSMutableArray new];
+////        }
+////        NSLog(@"%@", event);
+////        [_eventsByDate[key] addObject:date];
+////        
+////    }
+//}
 
 #pragma mark - CalendarManager delegate
 
@@ -168,6 +169,9 @@
             [_calendarContentView loadPreviousPageWithAnimation];
         }
     }
+    NSString *key = [[self dateFormatter] stringFromDate:_dateSelected];
+    _eventsSelected = [Calendar sharedInstance].events[key];
+    [self performSegueWithIdentifier:@"eventSegue" sender:self];
 }
 
 #pragma mark - Fake data
@@ -187,7 +191,6 @@
 - (BOOL)haveEventForDay:(NSDate *)date
 {
     NSString *key = [[self dateFormatter] stringFromDate:date];
-    NSLog(@"%@", key);
     if([Calendar sharedInstance].events[key]){
         return YES;
     }
@@ -196,14 +199,16 @@
     
 }
 
-/*
+
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
+    EventViewController *vc = [segue destinationViewController];
+    vc.eventsSelected = _eventsSelected;
 }
-*/
+
 
 @end

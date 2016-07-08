@@ -68,29 +68,32 @@ NSMutableArray *remoteFileList;
     NSLog(@"********************************************************");
     NSLog(@"upload button pushed");
     
+    NSLog(@"remote target for upload is %@", [firebaseStorageDirectory child:_UploadFileTextField.text]);
+    
     FIRStorageUploadTask *uploadTask =
         [
+            [firebaseStorageDirectory child:_UploadFileTextField.text]
+            putFile:
             [
-                [firebaseStorageArea child:@"files"]
-                child:[@"/" stringByAppendingString:_UploadFileTextField.text]
-            ] putFile:[NSURL fileURLWithPath:
-            [
+                NSURL fileURLWithPath:
                 [
-                    defaultLocalDocumentsDirectoryURL path] stringByAppendingString:[@"/" stringByAppendingString:_UploadFileTextField.text]
+                    [defaultLocalDocumentsDirectoryURL path] stringByAppendingString:[@"/" stringByAppendingString:_UploadFileTextField.text]
+                ]
             ]
-        ]
-    /* metadata:NULL completion:^(FIRStorageMetadata * _Nullable metadata, NSError * _Nullable error) {
-        if (error != nil)
-        {
-            NSLog(@"an error occured %@", error);
-        }
-        else
-        {
-            NSLog(@"file uploaded succesfully");
-            [self saveFileRefToFirebase:_UploadFileTextField.text];
-        }
-    }*/
-    ];};
+           metadata:NULL completion:^(FIRStorageMetadata * _Nullable metadata, NSError * _Nullable error)
+            {
+                if (error != NULL)
+                {
+                    NSLog(@"an error occured %@", error);
+                }
+                else
+                {
+                    NSLog(@"file uploaded succesfully");
+                    [self saveFileRefToFirebase:_UploadFileTextField.text];
+                }
+            }
+        ];
+};
 
 - (IBAction)DownloadButton:(id)sender {
     NSLog(@"********************************************************");

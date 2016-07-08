@@ -154,7 +154,7 @@ didSignInForUser:(GIDGoogleUser *)user
     [auth setRefreshToken:user.authentication.refreshToken];
     [auth setExpirationDate: user.authentication.accessTokenExpirationDate];
     self.calendarService.authorizer = auth;
-    NSLog(@"WHOA");
+    NSLog(@"Event query complete");
 }
 
 - (void)signIn:(GIDSignIn *)signIn

@@ -11,6 +11,7 @@
 #import "AppDelegate.h"
 #import "Calendar.h"
 #import "Event.h"
+
 @interface CalenderViewController (){
 //    NSMutableDictionary *_eventsByDate;
     
@@ -60,36 +61,36 @@
     // Dispose of any resources that can be recreated.
 }
 #pragma mark - fetch google calendar events
-- (void)fetchEvents {
-    GTLQueryCalendar *query = [GTLQueryCalendar queryForEventsListWithCalendarId:@"primary"];
-    query.maxResults = 10;
-    query.timeMin = [GTLDateTime dateTimeWithDate:[NSDate date]
-                                         timeZone:[NSTimeZone localTimeZone]];;
-    query.singleEvents = YES;
-    query.orderBy = kGTLCalendarOrderByStartTime;
-    
-    [_cservice executeQuery:query
-                   delegate:self
-          didFinishSelector:@selector(printEvents:finishedWithObject:error:)];
-}
-
-- (void)printEvents:(GTLServiceTicket *)ticket
-             finishedWithObject:(GTLCalendarEvents *)events
-                          error:(NSError *)error {
-//    _eventsByDate = [NSMutableDictionary new];
+//- (void)fetchEvents {
+//    GTLQueryCalendar *query = [GTLQueryCalendar queryForEventsListWithCalendarId:@"primary"];
+//    query.maxResults = 10;
+//    query.timeMin = [GTLDateTime dateTimeWithDate:[NSDate date]
+//                                         timeZone:[NSTimeZone localTimeZone]];;
+//    query.singleEvents = YES;
+//    query.orderBy = kGTLCalendarOrderByStartTime;
 //    
-//    for(GTLCalendarEvent *event in events){
-//        NSDate *date = event.start.dateTime.date;
-//        NSString *key = [[self dateFormatter] stringFromDate:date];
+//    [_cservice executeQuery:query
+//                   delegate:self
+//          didFinishSelector:@selector(printEvents:finishedWithObject:error:)];
+//}
 //
-//        if(!_eventsByDate[key]){
-//            _eventsByDate[key] = [NSMutableArray new];
-//        }
-//        NSLog(@"%@", event);
-//        [_eventsByDate[key] addObject:date];
-//        
-//    }
-}
+//- (void)printEvents:(GTLServiceTicket *)ticket
+//             finishedWithObject:(GTLCalendarEvents *)events
+//                          error:(NSError *)error {
+////    _eventsByDate = [NSMutableDictionary new];
+////    
+////    for(GTLCalendarEvent *event in events){
+////        NSDate *date = event.start.dateTime.date;
+////        NSString *key = [[self dateFormatter] stringFromDate:date];
+////
+////        if(!_eventsByDate[key]){
+////            _eventsByDate[key] = [NSMutableArray new];
+////        }
+////        NSLog(@"%@", event);
+////        [_eventsByDate[key] addObject:date];
+////        
+////    }
+//}
 
 #pragma mark - CalendarManager delegate
 
@@ -168,6 +169,14 @@
             [_calendarContentView loadPreviousPageWithAnimation];
         }
     }
+    NSString *key = [[self dateFormatter] stringFromDate:_dateSelected];
+    Event *events =[Calendar sharedInstance].events[key];
+    NSLog(@"%@", [Calendar sharedInstance].events);
+    NSLog(@"%@", events);
+    for(Event *event in events){
+        NSLog(@"Hi");
+        
+    }
 }
 
 #pragma mark - Fake data
@@ -187,7 +196,6 @@
 - (BOOL)haveEventForDay:(NSDate *)date
 {
     NSString *key = [[self dateFormatter] stringFromDate:date];
-    NSLog(@"%@", key);
     if([Calendar sharedInstance].events[key]){
         return YES;
     }

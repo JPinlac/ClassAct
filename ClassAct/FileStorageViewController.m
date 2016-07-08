@@ -15,7 +15,7 @@ FIRStorageReference *firebaseStorageArea;
 FIRStorageReference *firebaseStorageDirectory;
 NSURL *defaultLocalDocumentsDirectoryURL;
 NSString *localDirectory;
-
+NSMutableArray *remoteFileList;
 
 @interface FileStorageViewController ()
 
@@ -34,39 +34,28 @@ NSString *localDirectory;
     }
     // Do any additional setup after loading the view.
     
+    //*****************************************************************************************
+    //*****************************************************************************************
     //Create reference to firebase storage repository
     FIRStorageReference *firebaseStorageArea = [[FIRStorage storage] referenceForURL:@"gs://classact-22396.appspot.com"];
     firebaseStorageDirectory = [firebaseStorageArea child:@"files"];
     
+    //*****************************************************************************************
+    //*****************************************************************************************
     //Create references to default local directory structure
     defaultLocalDocumentsDirectoryURL = [[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] lastObject];
     localDirectory = [[defaultLocalDocumentsDirectoryURL path] stringByAppendingString:@"/"];
     NSLog(@"local directory: %@", localDirectory);
     
+    //*****************************************************************************************
+    //*****************************************************************************************
     //display local directory contents eligible for uploading
-    NSFileManager *filemgr;
-    NSArray *filelist;
-    int count;
-    int i;
+    [self displayLocalFiles];
     
-    filemgr =[NSFileManager defaultManager];
-    filelist = [filemgr contentsOfDirectoryAtPath:localDirectory error:NULL];
-    count = [filelist count];
-    
-    NSString *fileListBuffer = @"";
-
-    for (i = 0; i < count; i++)
-    {
-        fileListBuffer = [fileListBuffer stringByAppendingString:filelist[i]];
-        fileListBuffer = [fileListBuffer stringByAppendingString:@"\n"];
-        //NSLog(@"%@", filelist[i]);
-    };
-    NSLog(@"fileListBuffer is %@", fileListBuffer);
-    _UploadFileTextView.text = fileListBuffer;
-    
-    
-    
-    
+    //*****************************************************************************************
+    //*****************************************************************************************
+    //display remote directory contents eligible for downloading
+    [self queryFileRefsFromFirebase];
     
 }
 
@@ -79,8 +68,29 @@ NSString *localDirectory;
     NSLog(@"********************************************************");
     NSLog(@"upload button pushed");
     
-    FIRStorageUploadTask *uploadTask = [[[firebaseStorageArea child:@"files"] child:[@"/" stringByAppendingString:_UploadFileTextField.text]] putFile:[NSURL fileURLWithPath:[[defaultLocalDocumentsDirectoryURL path] stringByAppendingString:[@"/" stringByAppendingString:_UploadFileTextField.text]]]];
-}
+    FIRStorageUploadTask *uploadTask =
+        [
+            [
+                [firebaseStorageArea child:@"files"]
+                child:[@"/" stringByAppendingString:_UploadFileTextField.text]
+            ] putFile:[NSURL fileURLWithPath:
+            [
+                [
+                    defaultLocalDocumentsDirectoryURL path] stringByAppendingString:[@"/" stringByAppendingString:_UploadFileTextField.text]
+            ]
+        ]
+    /* metadata:NULL completion:^(FIRStorageMetadata * _Nullable metadata, NSError * _Nullable error) {
+        if (error != nil)
+        {
+            NSLog(@"an error occured %@", error);
+        }
+        else
+        {
+            NSLog(@"file uploaded succesfully");
+            [self saveFileRefToFirebase:_UploadFileTextField.text];
+        }
+    }*/
+    ];};
 
 - (IBAction)DownloadButton:(id)sender {
     NSLog(@"********************************************************");
@@ -100,7 +110,59 @@ NSString *localDirectory;
     }];
 }
 
+-(void)saveFileRefToFirebase:(NSString *)fileName {
+    
+    FIRDatabaseReference *fireDB = [[FIRDatabase database] reference];
+    FIRDatabaseReference *fileRef = [fireDB child:@"files"].childByAutoId;
+    
+    NSDictionary *fileRefToAdd = @{@"fileName" : fileName};
+    NSLog(@"dictionary at firebase save: %@", fileRefToAdd.description);
+    
+    [fileRef setValue:fileRefToAdd];
+}
 
+-(void) queryFileRefsFromFirebase {
+    
+    FIRDatabaseReference *fireDB = [[FIRDatabase database] reference];
+    FIRDatabaseReference *filesRef = [fireDB.ref child:@"files"];
+    
+    FIRDatabaseQuery *currentFileList = [filesRef queryOrderedByChild:@"files"];
+    __block NSString *fileNameString = @"";
+    [currentFileList observeEventType: FIRDataEventTypeChildAdded withBlock:^(FIRDataSnapshot *snapshot)
+    {
+        
+        fileNameString = [fileNameString stringByAppendingString:snapshot.value[@"fileName"]];
+        fileNameString = [fileNameString stringByAppendingString:@"\n"];
+        _DownloadFileTextView.text = fileNameString;
+        [_DownloadFileTextView reloadInputViews];
+        NSLog(@"from query: fileNameString is... %@", fileNameString);
+
+    }];
+}
+
+-(void) displayLocalFiles {
+    
+    NSFileManager *filemgr;
+    NSArray *localFileList;
+    int localFileCount;
+    int i;
+    
+    filemgr =[NSFileManager defaultManager];
+    localFileList = [filemgr contentsOfDirectoryAtPath:localDirectory error:NULL];
+    
+    localFileCount = [localFileList count];
+    
+    NSString *localFileListBuffer = @"";
+    
+    for (i = 0; i < localFileCount; i++)
+    {
+        localFileListBuffer = [localFileListBuffer stringByAppendingString:localFileList[i]];
+        localFileListBuffer = [localFileListBuffer stringByAppendingString:@"\n"];
+    };
+    NSLog(@"localFileListBuffer is %@", localFileListBuffer);
+    _UploadFileTextView.text = localFileListBuffer;
+
+}
 /*
 #pragma mark - Navigation
 

@@ -136,16 +136,6 @@
     
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
-
 - (void)blinkTextInLabel:(UILabel *)label toColor:(UIColor *)color
 {
     [UIView transitionWithView:label duration:0 options:UIViewAnimationOptionTransitionCrossDissolve animations:^{
@@ -157,8 +147,9 @@
         } completion:nil];
     }];
 }
+
 -(void)changeBorders{
-    _quoteLabel.layer.borderWidth = 10.0f;
+    _quoteLabel.layer.borderWidth = 08.0f;
     _quoteLabel.layer.borderColor = [[UIColor colorWithPatternImage:[UIImage imageNamed:@"dots.png"]] CGColor];
 }
 

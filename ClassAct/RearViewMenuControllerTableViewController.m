@@ -26,7 +26,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+//_menuArray = cellidentifiers & _menuImages = reference to the images for the cells
     _menuArray = @[@"profile", @"classes", @"calender", @"storage", @"agenda", @"chat", @"logOut"];
     _menuImagesArray = @[@"profile.png", @"classesIcon.png", @"calanderIcon.png", @"storage.png", @"agenda.png", @"chatIcon.png", @"LogoutIcon.png"];
     
@@ -87,7 +87,6 @@
         UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
         LogInViewController *viewController = (LogInViewController *)[storyboard instantiateViewControllerWithIdentifier:@"loginVC"];
         [self presentViewController:viewController animated:YES completion:nil];
-        
     }}
 }
 

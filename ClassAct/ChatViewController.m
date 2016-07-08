@@ -38,9 +38,7 @@
 - (void)viewDidLoad {
     
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
-    [super viewDidLoad];
-    // creates the side bar menu
+// creates the side bar menu
     SWRevealViewController *revealViewController = self.revealViewController;
         if ( revealViewController ) {
             [self.sideBarButton setTarget: self.revealViewController];
@@ -53,15 +51,13 @@
     [self setupBubbles];
     
     _messages = [[NSMutableArray alloc] init];
-    
+//removes the avatars
     self.collectionView.collectionViewLayout.incomingAvatarViewSize = CGSizeZero;
     self.collectionView.collectionViewLayout.outgoingAvatarViewSize = CGSizeZero;
-    
+//removes the built in toolbar button
     self.inputToolbar.contentView.leftBarButtonItem = nil ;
     
     _rootRef= [[FIRDatabase database] reference];
-    self.messageBubbleTopLabel.textColor = [UIColor purpleColor];
-    
 }
 
 -(void)viewDidAppear:(BOOL)animated {
@@ -94,7 +90,6 @@
                                                                                         saturation:0.78f
                                                                                         brightness:0.92f
                                                                                              alpha:1.0f]];
-    
 }
 
 -(void)addMessagewithId:(NSString*) senderId andText:(NSString*) text {
@@ -121,26 +116,26 @@
 }
 
 -(void)observeIsTyping {
-    _isTypingRef = [[_rootRef child:@"isTypingIndicator"] child:self.senderId ];
-    
+    _isTypingRef = [[_rootRef child:@"isTypingIndicator"] child:self.senderId];
+//removes reference in database once app is closed
     [_isTypingRef onDisconnectRemoveValue];
     
     _typingQuery = [[[_rootRef child:@"isTypingIndicator"] queryOrderedByValue] queryEqualToValue:@"1"];
     
     [_typingQuery observeEventType:FIRDataEventTypeValue withBlock:  ^ (FIRDataSnapshot *snapshot) {
         
-        if ( snapshot.hasChildren) {
+        if (snapshot.hasChildren) {
             if (snapshot.childrenCount == 1 && self.isTyping) {
                 //  You're the only typing, don't show the indicator
                 [self setShowTypingIndicator:NO];
             } else {
                 //  others typing
                 [self setShowTypingIndicator:YES];
+//setShowTypingIncdicator is a method of JSQMessagesViewController
             }
         } else {
             [self setShowTypingIndicator:NO];
         }
-        
         [self scrollToBottomAnimated:YES];
     }];
 }
@@ -163,8 +158,6 @@
     // Push data to Firebase Database
     [[[_rootRef child:@"messages"] childByAutoId] setValue:mdata];
     
-    //[JSQSystemSoundPlayer jsq__playMessageSentSound];
-    
     _isTyping =false;
     [self sendIsTyping];
     [self finishSendingMessage];
@@ -176,7 +169,7 @@
     [super textViewDidChange:textView];
     
     _isTyping =  ![textView.text  isEqual: @""];
-    
+//change isTyping to true if the text field is not empty
     [self sendIsTyping];
 }
 
